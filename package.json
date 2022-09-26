@@ -6,5 +6,8 @@
   ],
   "devDependencies": {
     "lerna": "^5.5.0"
+  },
+  "dependencies": {
+    "vue": "^3.2.39"
   }
 }
