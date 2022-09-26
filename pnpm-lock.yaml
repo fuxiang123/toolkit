@@ -17,6 +17,9 @@ importers:
   packages/module-b:
     specifiers: {}
 
+  packages/module-c:
+    specifiers: {}
+
 packages:
 
   registry.nlark.com/@nodelib/fs.scandir/2.1.5:
