@@ -10,6 +10,13 @@
     },
     "version": {
       "conventionalCommits": true
+    },
+    "publish": {
+      "message":"chore: publish"
+    },
+    "run": {
+      "stream ": true,
+      "sort": true
     }
   }
 }
