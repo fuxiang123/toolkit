@@ -1,23 +1,32 @@
 {
-  "name": "module-c",
-  "version": "0.0.2",
+  "name": "test",
+  "version": "1.0.0",
   "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
   "keywords": [],
   "author": "fuxiang123 <449585662@qq.com>",
   "license": "ISC",
-  "main": "lib/module-c.js",
+  "main": "dist/test.js",
+  "module": "dist/test.module.js",
   "directories": {
-    "lib": "lib",
+    "lib": "dist",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "publishConfig": {
     "registry": "http://82.157.120.5:4873/"
   },
-  "scripts": {
-    "test": "node ./__tests__/module-c.test.js"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuxiang123/test-learn.git"
   },
-  "gitHead": "22aea63cdbda4117bbd49ba894cfb5c5238c4ce9"
+  "scripts": {
+    "test": "node ./__tests__/test.test.js"
+  },
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/fuxiang123/test-learn/issues"
+  },
+  "homepage": "https://github.com/fuxiang123/test-learn#readme"
 }

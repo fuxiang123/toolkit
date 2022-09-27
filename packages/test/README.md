@@ -1,11 +1,11 @@
-# `module-b`
+# `test`
 
 > TODO: description
 
 ## Usage
 
 ```
-const moduleB = require('module-b');
+import test from 'test';
 
 // TODO: DEMONSTRATE API
 ```

@@ -3,5 +3,13 @@
   "useNx": false,
   "useWorkspaces": true,
   "npmClient": "pnpm",
-  "version": "independence"
+  "version": "independent",
+  "command": {
+    "create": {
+      "esModule": true
+    },
+    "version": {
+      "conventionalCommits": true
+    }
+  }
 }
