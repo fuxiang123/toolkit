@@ -5,7 +5,7 @@
   "author": "fuxiang123 <449585662@qq.com>",
   "homepage": "https://github.com/fuxiang123/test-learn#readme",
   "license": "ISC",
-  "main": "dist/test.js",
+  "main": "dist/test.module.js",
   "module": "dist/test.module.js",
   "directories": {
     "lib": "dist",
@@ -24,7 +24,6 @@
   "scripts": {
     "test": "node ./__tests__/test.test.js"
   },
-  "type": "module",
   "bugs": {
     "url": "https://github.com/fuxiang123/test-learn/issues"
   }

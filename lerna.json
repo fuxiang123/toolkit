@@ -5,20 +5,26 @@
   "npmClient": "pnpm",
   "version": "independent",
   "command": {
-    "create": {
-      "esModule": true
-    },
     "version": {
       "conventionalCommits": true,
       "stream ": true,
       "sort": true
     },
     "publish": {
-      "message":"chore: publish"
+      "allowBranch": "master",
+      "bump": "patch",
+      "conventialCommits": true,
+      "message": "chore(release): Publish"
     },
     "run": {
       "stream ": true,
       "sort": true
     }
-  }
+  },
+  "ignoreChanges": [
+    "CHANGELOG.md",
+    "**/__tests__/**",
+    "**/__mocks__/**",
+    "**/__testfixtures__/**"
+  ]
 }

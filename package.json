@@ -8,12 +8,14 @@
     "build": "cross-env NODE_ENV=production rollup -c",
     "build:dev": "cross-env NODE_ENV=development rollup -c"
   },
+  "type": "module",
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/preset-env": "^7.19.1",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.1.1",
+    "@rollup/plugin-typescript": "^8.5.0",
     "cross-env": "^7.0.3",
     "husky": "^8.0.1",
     "lerna": "^5.5.0",
@@ -21,5 +23,8 @@
     "rollup": "^2.61.1",
     "rollup-plugin-postcss": "^3.1.4",
     "rollup-plugin-terser": "^6.1.0"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
   }
 }
