@@ -11,13 +11,7 @@ importers:
     devDependencies:
       lerna: registry.npmmirror.com/lerna/5.5.2
 
-  packages/module-a:
-    specifiers: {}
-
-  packages/module-b:
-    specifiers: {}
-
-  packages/module-c:
+  packages/test:
     specifiers: {}
 
 packages:
