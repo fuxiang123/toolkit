@@ -9,7 +9,9 @@
       "esModule": true
     },
     "version": {
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "stream ": true,
+      "sort": true
     },
     "publish": {
       "message":"chore: publish"
