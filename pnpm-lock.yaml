@@ -94,11 +94,11 @@ importers:
 
   packages/lint/eslint-config-vue:
     specifiers:
-      '@neuton/eslint-config': workspace:^1.0.0
+      '@neuton/eslint-config': workspace:^1.0.1
       '@vue/eslint-config-typescript': ^9.1.0
     devDependencies:
       '@neuton/eslint-config': link:../eslint-config
-      '@vue/eslint-config-typescript': 9.1.0
+      '@vue/eslint-config-typescript': 9.1.0_eslint@7.32.0
 
   packages/ts/tsconfig:
     specifiers: {}
@@ -1850,7 +1850,7 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vue/eslint-config-typescript/9.1.0:
+  /@vue/eslint-config-typescript/9.1.0_eslint@7.32.0:
     resolution: {integrity: sha512-j/852/ZYQ5wDvCD3HE2q4uqJwJAceer2FwoEch1nFo+zTOsPrbzbE3cuWIs3kvu5hdFsGTMYwRwjI6fqZKDMxQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1859,7 +1859,8 @@ packages:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
       eslint-plugin-vue: ^8.0.1
     dependencies:
-      vue-eslint-parser: 8.3.0
+      eslint: 7.32.0
+      vue-eslint-parser: 8.3.0_eslint@7.32.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6257,13 +6258,14 @@ packages:
     resolution: {integrity: sha512-/juG65kTL4Cy2su4P8HjtkTxk6VmJDiOPBufWniqQ6wknac6jNiXS9vU+hO3wgusiyqWlzTbVHi0dyJqRONg3w==}
     dev: true
 
-  /vue-eslint-parser/8.3.0:
+  /vue-eslint-parser/8.3.0_eslint@7.32.0:
     resolution: {integrity: sha512-dzHGG3+sYwSf6zFBa0Gi9ZDshD7+ad14DGOdTLjruRVgZXe2J+DcZ9iUhyR48z5g1PqRa20yt3Njna/veLJL/g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
     dependencies:
       debug: 4.3.4
+      eslint: 7.32.0
       eslint-scope: 7.1.1
       eslint-visitor-keys: 3.3.0
       espree: 9.4.0
