@@ -9,10 +9,14 @@ module.exports = {
   rules: {
     'type-case': [0],
     'type-empty': [0],
-    'type-enum': [2, 'always', ['📦build', '👷ci', '📝docs', '🌟feat', '🐛fix', '🚀perf', '🌠refactor', '🔂revert', '💎style', '🚨test']],
+    'type-enum': [
+      2,
+      'always',
+      ['🔧tool', '📝docs', '🌟feat', '🐛fix', '🚀perf', '🌠refactor', '🔂revert', '💎style', '🚨test', '🔧tooling', '🔖version', '📦chore'],
+    ],
     'scope-empty': [0],
     'scope-case': [0],
-    'subject-empty': [2, 'always'],
+    'subject-empty': [0],
   },
   prompt: {
     settings: {},
@@ -64,21 +68,20 @@ module.exports = {
             title: 'Tests',
             emoji: '🚨',
           },
-          '📦build': {
-            description: '打包',
-            title: '打包',
-            emoji: '📦',
+          '🔧tool': {
+            description: '开发工具变动（构建、脚手架工具等）',
+            title: '工具',
+            emoji: '🔧',
           },
-          '👷ci': {
-            description: 'CI部署',
-            title: 'Continuous Integrations',
-            emoji: '⚙️',
-          },
-
           '🔂revert': {
             description: '版本回退',
             title: 'Reverts',
             emoji: '🔂',
+          },
+          '📦chore': {
+            description: '发布版本',
+            title: 'chore',
+            emoji: '📦',
           },
         },
       },
