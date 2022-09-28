@@ -1,0 +1,32 @@
+{
+  "name": "@neuton/eslint-config-vue",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "homepage": "https://github.com/fuxiang123/test-learn#readme",
+  "license": "ISC",
+  "devDependencies": {
+    "@neuton/eslint-config": "workspace:^1.0.0",
+    "@vue/eslint-config-typescript": "^9.1.0"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "neuton"
+  ],
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "http://82.157.120.5:4873/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuxiang123/test-learn.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/test.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/fuxiang123/test-learn/issues"
+  }
+}

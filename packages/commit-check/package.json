@@ -1,0 +1,26 @@
+{
+  "name": "@neuton/commit-check",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "homepage": "https://github.com/fuxiang123/test-learn#readme",
+  "bin": {
+    "commit-check": "dist/index.js"
+  },
+  "devDependencies": {
+    "tslib": "^2.4.0"
+  },
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "http://82.157.120.5:4873/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuxiang123/test-learn.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/test.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/fuxiang123/test-learn/issues"
+  }
+}

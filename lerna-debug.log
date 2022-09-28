@@ -2,14 +2,14 @@
 0 silly argv   _: [ 'create' ],
 0 silly argv   lernaVersion: '5.5.2',
 0 silly argv   '$0': 'C:\\Users\\fx449\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js',
-0 silly argv   name: 'module-c'
+0 silly argv   name: 'S-'
 0 silly argv }
 1 notice cli v5.5.2
 2 verbose rootPath D:\workspace\practice\lerna-test
-3 verbose packageConfigs Package manager 'pnpm' detected. Resolving packages using 'pnpm-workspace.yaml'.
+3 info versioning independent
 4 verbose packageConfigs Package manager 'pnpm' detected. Resolving packages using 'pnpm-workspace.yaml'.
 5 verbose packageConfigs Package manager 'pnpm' detected. Resolving packages using 'pnpm-workspace.yaml'.
-6 warn ENOREMOTE No git remote found, skipping repository property
+6 verbose packageConfigs Package manager 'pnpm' detected. Resolving packages using 'pnpm-workspace.yaml'.
 7 error Error: canceled
 7 error     at Interface.<anonymous> (D:\workspace\practice\lerna-test\node_modules\.pnpm\registry.npmmirror.com+read@1.0.7\node_modules\read\lib\read.js:66:13)
 7 error     at Interface.emit (node:events:513:28)
