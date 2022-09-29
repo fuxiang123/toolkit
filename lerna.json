@@ -12,7 +12,6 @@
     },
     "publish": {
       "allowBranch": "master",
-      "bump": "patch",
       "conventialCommits": true,
       "message": "chore(release): Publish"
     },
