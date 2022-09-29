@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/fuxiang123/test-learn/compare/@neuton/commit-check@1.1.3...@neuton/commit-check@1.1.4) (2022-09-29)
+
+**Note:** Version bump only for package @neuton/commit-check
+
 ## [1.1.3](https://github.com/fuxiang123/test-learn/compare/@neuton/commit-check@1.1.2...@neuton/commit-check@1.1.3) (2022-09-29)
 
 **Note:** Version bump only for package @neuton/commit-check
