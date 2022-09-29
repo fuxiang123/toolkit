@@ -10,7 +10,6 @@
     "lint": "eslint --ext .ts,.js --ignore-path .gitignore --fix packages",
     "lint:error": "eslint --ext .ts,.js --ignore-path .gitignore --fix --quiet packages",
     "commit": "npx git-cz",
-    "postinstall": "npx husky add .husky/commit-msg \"npx --no-install commitlint --edit $1\" && npx husky add .husky/pre-commit \"npx lint-staged\"",
     "prepare": "npx husky install"
   },
   "devDependencies": {
