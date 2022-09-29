@@ -4,16 +4,10 @@
 
 ## 预先准备
 
-1. 安装 pnpm
+安装 pnpm
 
 ```
 npm install -g pnpm
-```
-
-2. 安装 lerna
-
-```
-pnpm add lerna -g
 ```
 
 ## 使用方式
@@ -33,8 +27,8 @@ pnpm build
 ### 创建新项目
 
 ```
-// pnpm add:pkg <项目名>
-pnpm add:pkg test-demo
+// pnpm create:pkg <项目名>
+pnpm create:pkg test-demo
 ```
 
 ### 发布项目
@@ -42,5 +36,7 @@ pnpm add:pkg test-demo
 > 注：如有不需要发布到 npm 的项目，需要在 package.json 里面添加 `private:true` 属性
 
 ```
-pnpm publish
+pnpm publish:pkg
+// or
+npx lerna publish
 ```

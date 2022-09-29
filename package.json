@@ -6,11 +6,11 @@
   ],
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup -c",
-    "add:pkg": "node scripts/create",
+    "create:pkg": "node scripts/create",
     "lint": "eslint --ext .ts,.js --ignore-path .gitignore --fix packages",
     "lint:error": "eslint --ext .ts,.js --ignore-path .gitignore --fix --quiet packages",
     "commit": "npx git-cz",
-    "publish": "lerna publish",
+    "publish:pkg": "lerna publish",
     "prepare": "npx husky install"
   },
   "devDependencies": {
