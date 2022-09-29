@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/fuxiang123/test-learn/compare/@neuton/commit-check@1.1.1...@neuton/commit-check@1.1.2) (2022-09-29)
+
+### Bug Fixes
+
+- **commit-check:** 添加 shebang 支持 ([b71eac3](https://github.com/fuxiang123/test-learn/commit/b71eac37798e01e6708878c3cfef30645a4cf3e4))
+
 ## [1.1.1](https://github.com/fuxiang123/test-learn/compare/@neuton/commit-check@1.1.0...@neuton/commit-check@1.1.1) (2022-09-29)
 
 **Note:** Version bump only for package @neuton/commit-check
