@@ -1,17 +1,23 @@
 # `@neuton/commit`
 
-> TODO: 作用描述
+> 快速添加 git commit 检查工具
 
 ## 使用方式
 
 ### 1.在项目根目录下安装依赖
 
 ```
-npm install commitizen commitlint commitlint-config-cz cz-conventional-changelog cz-customizable lint-staged @commitlint/config-conventional @neuton/commit-check -D
+npm install @neuton/commit-check -D
 ```
 
-### 2.在 package.json 的 scripts 里添加命令
+### 2. 运行 commit-check 指令
 
 ```
-npx git-cz
+npx commit-check
+```
+
+### 3. 运行完毕后，执行 install 指令
+
+```
+pnpm install
 ```

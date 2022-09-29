@@ -9,6 +9,9 @@
   "devDependencies": {
     "tslib": "^2.4.0"
   },
+  "files": [
+    "dist"
+  ],
   "license": "ISC",
   "publishConfig": {
     "registry": "http://82.157.120.5:4873/"

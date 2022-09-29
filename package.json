@@ -20,7 +20,7 @@
     "@commitlint/config-angular": "^17.0.3",
     "@commitlint/config-conventional": "^17.1.0",
     "@commitlint/cz-commitlint": "^17.0.3",
-    "@neuton/commit-check": "workspace:^1.0.0",
+    "@neuton/commit-check": "workspace:*",
     "@neuton/eslint-config": "workspace:*",
     "@neuton/tsconfig": "workspace:*",
     "@rollup/plugin-babel": "^5.3.1",

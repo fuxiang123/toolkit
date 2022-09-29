@@ -6,10 +6,6 @@
   "license": "ISC",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
-  "directories": {
-    "lib": "dist",
-    "test": "__tests__"
-  },
   "files": [
     "dist"
   ],
