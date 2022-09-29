@@ -94,7 +94,7 @@ importers:
 
   packages/lint/eslint-config-vue:
     specifiers:
-      '@neuton/eslint-config': workspace:^1.0.2
+      '@neuton/eslint-config': workspace:^1.1.0
       '@vue/eslint-config-typescript': ^9.1.0
     devDependencies:
       '@neuton/eslint-config': link:../eslint-config
