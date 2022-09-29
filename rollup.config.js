@@ -7,6 +7,7 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
+import shebang from 'rollup-plugin-preserve-shebang';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -22,6 +23,7 @@ const plugins = [
   }),
   babel({ babelHelpers: 'bundled' }),
   typescript(),
+  shebang(),
 ];
 
 // 如果不是开发环境，开启压缩
