@@ -1,18 +1,10 @@
 export const commitLintConfig = `module.exports = {
   extends: ['@commitlint/config-angular'],
-  parserPreset: {
-    parserOpts: {
-      headerPattern: /^(.*?)(?:((.*)))?:?s(.*)$/,
-      headerCorrespondence: ['type', 'scope', 'subject'],
-    },
-  },
   rules: {
-    'type-case': [0],
-    'type-empty': [0],
-    'type-enum': [2, 'always', ['🔧tool', '📝docs', '🌟feat', '🐛fix', '🚀perf', '🌠refactor', '🔂revert', '💎style', '🚨test']],
-    'scope-empty': [0],
-    'scope-case': [0],
-    'subject-empty': [2, 'always'],
+    'type-empty': [2, 'never'],
+    'type-enum': [2, 'always', ['tool', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test', 'chore']],
+    'scope-empty': [2, 'never'],
+    'subject-empty': [2, 'never'],
   },
   prompt: {
     settings: {},
@@ -68,16 +60,21 @@ export const commitLintConfig = `module.exports = {
             description: '开发工具变动（构建、脚手架工具等）',
             title: '工具',
             emoji: '🔧',
-          }，
+          },
           '🔂revert': {
             description: '版本回退',
             title: 'Reverts',
             emoji: '🔂',
           },
+          '📦chore': {
+            description: '发布版本',
+            title: 'chore',
+            emoji: '📦',
+          },
         },
       },
       scope: {
-        description: '请输入修改的范围（可选）',
+        description: '请输入修改的范围（必填）',
       },
       subject: {
         description: '请简要描述提交（必填）',

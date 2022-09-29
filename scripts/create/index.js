@@ -24,6 +24,8 @@ if (!projectName.match(/^[a-zA-Z]/)) {
 const data = {
   dirName,
   projectName,
+  gitrepo: 'https://gitee.com/ningdongyiliao/neuton-toolkit',
+  registry: 'http://82.157.120.5:4873/',
 };
 
 const projectPath = path.resolve(target, data.dirName);

@@ -1,22 +1,10 @@
 module.exports = {
   extends: ['@commitlint/config-angular'],
-  parserPreset: {
-    parserOpts: {
-      headerPattern: /^(.*?)(?:((.*)))?:?s(.*)$/,
-      headerCorrespondence: ['type', 'scope', 'subject'],
-    },
-  },
   rules: {
-    'type-case': [0],
-    'type-empty': [0],
-    'type-enum': [
-      2,
-      'always',
-      ['🔧tool', '📝docs', '🌟feat', '🐛fix', '🚀perf', '🌠refactor', '🔂revert', '💎style', '🚨test', '🔧tooling', '🔖version', '📦chore'],
-    ],
-    'scope-empty': [0],
-    'scope-case': [0],
-    'subject-empty': [0],
+    'type-empty': [2, 'never'],
+    'type-enum': [2, 'always', ['tool', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test', 'chore']],
+    'scope-empty': [2, 'never'],
+    'subject-empty': [2, 'never'],
   },
   prompt: {
     settings: {},
@@ -86,7 +74,7 @@ module.exports = {
         },
       },
       scope: {
-        description: '请输入修改的范围（可选）',
+        description: '请输入修改的范围（必填）',
       },
       subject: {
         description: '请简要描述提交（必填）',

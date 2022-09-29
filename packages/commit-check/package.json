@@ -4,7 +4,7 @@
   "description": "> TODO: description",
   "homepage": "https://github.com/fuxiang123/test-learn#readme",
   "bin": {
-    "commit-check": "dist/index.js"
+    "commit-check": "./dist/index.js"
   },
   "devDependencies": {
     "tslib": "^2.4.0"
@@ -24,6 +24,6 @@
     "test": "node ./__tests__/test.test.js"
   },
   "bugs": {
-    "url": "https://github.com/fuxiang123/test-learn/issues"
+    "url": "https://gitee.com/ningdongyiliao/neuton-toolkit/issues"
   }
 }

@@ -2,24 +2,24 @@
   "name": "@neuton/{{ dirName }}",
   "version": "1.0.0",
   "description": "> TODO: description",
-  "homepage": "https://github.com/fuxiang123/{{ dirName }}#readme",
+  "homepage": "{{ gitrepo }}{{/{{ dirName }}#readme",
   "license": "ISC",
-  "main": "dist/index.js",
-  "module": "dist/index.module.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
   "files": [
     "dist"
   ],
   "publishConfig": {
-    "registry": "http://82.157.120.5:4873/"
+    "registry": "{{ registry }}"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fuxiang123/test-learn.git"
+    "url": "{{ gitrepo }}.git"
   },
   "scripts": {
     "test": "node ./__tests__/test.test.js"
   },
   "bugs": {
-    "url": "https://github.com/fuxiang123/test-learn/issues"
+    "url": "{{ gitrepo }}/issues"
   }
 }
