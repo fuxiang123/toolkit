@@ -27,7 +27,7 @@ importers:
       inquirer: ^8.0.0
       lerna: ^5.5.0
       lint-staged: ^12.4.1
-      prettier: ^2.4.1
+      prettier: ^2.7.1
       rimraf: ^3.0.2
       rollup: ^2.61.1
       rollup-plugin-postcss: ^3.1.4

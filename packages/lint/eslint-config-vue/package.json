@@ -5,7 +5,7 @@
   "homepage": "https://github.com/fuxiang123/test-learn#readme",
   "license": "ISC",
   "devDependencies": {
-    "@neuton/eslint-config": "workspace:^1.1.1",
+    "@neuton/eslint-config": "workspace:^*",
     "@vue/eslint-config-typescript": "^9.1.0"
   },
   "keywords": [
