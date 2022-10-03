@@ -6,7 +6,8 @@
   "license": "ISC",
   "dependencies": {
     "@neuton/eslint-config": "^1.1.3",
-    "@vue/eslint-config-typescript": "^9.1.0"
+    "@vue/eslint-config-typescript": "^9.1.0",
+    "eslint-plugin-vue": "^9.5.1"
   },
   "keywords": [
     "eslint",
