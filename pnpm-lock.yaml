@@ -95,10 +95,12 @@ importers:
       '@neuton/eslint-config': ^1.1.3
       '@vue/eslint-config-typescript': ^9.1.0
       eslint-plugin-vue: ^9.5.1
+      vue-eslint-parser: ^9.1.0
     dependencies:
       '@neuton/eslint-config': link:../eslint-config
       '@vue/eslint-config-typescript': 9.1.0_166121e82ab2498aa3e825aa959b45e4
       eslint-plugin-vue: 9.5.1_eslint@7.32.0
+      vue-eslint-parser: 9.1.0_eslint@7.32.0
 
   packages/ts/tsconfig:
     specifiers: {}
