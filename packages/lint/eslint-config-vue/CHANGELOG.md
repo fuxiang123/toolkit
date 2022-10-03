@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.8](https://github.com/fuxiang123/test-learn/compare/@neuton/eslint-config-vue@1.1.7...@neuton/eslint-config-vue@1.1.8) (2022-10-03)
+
+### Bug Fixes
+
+- **eslint-config-vue:** 修复拼写错误 ([bce61d5](https://github.com/fuxiang123/test-learn/commit/bce61d556dff82984780a629ae1313ac5aef7603))
+
 ## [1.1.7](https://github.com/fuxiang123/test-learn/compare/@neuton/eslint-config-vue@1.1.6...@neuton/eslint-config-vue@1.1.7) (2022-10-03)
 
 ### Bug Fixes
