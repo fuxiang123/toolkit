@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.7](https://github.com/fuxiang123/test-learn/compare/@neuton/eslint-config-vue@1.1.6...@neuton/eslint-config-vue@1.1.7) (2022-10-03)
+
+### Bug Fixes
+
+- **eslint-config-vue:** 添加缺失依赖 ([127b18a](https://github.com/fuxiang123/test-learn/commit/127b18a741d0a7c3dc574ff0bfdde772634b863a))
+
 ## [1.1.6](https://github.com/fuxiang123/test-learn/compare/@neuton/eslint-config-vue@1.1.5...@neuton/eslint-config-vue@1.1.6) (2022-10-03)
 
 ### Bug Fixes
