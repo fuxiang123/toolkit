@@ -1,7 +1,7 @@
 {
   "name": "@neuton/eslint-config-vue",
   "version": "1.1.4",
-  "description": "> TODO: description",
+  "description": "eslint,prettier,vue配置",
   "homepage": "https://github.com/fuxiang123/test-learn#readme",
   "license": "ISC",
   "dependencies": {
@@ -11,10 +11,8 @@
   "keywords": [
     "eslint",
     "eslintconfig",
-    "neuton"
-  ],
-  "files": [
-    "dist"
+    "neuton",
+    "vue"
   ],
   "publishConfig": {
     "registry": "http://82.157.120.5:4873/"
@@ -22,9 +20,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fuxiang123/test-learn.git"
-  },
-  "scripts": {
-    "test": "node ./__tests__/test.test.js"
   },
   "bugs": {
     "url": "https://github.com/fuxiang123/test-learn/issues"
