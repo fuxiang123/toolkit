@@ -7,5 +7,5 @@ module.exports = {
   rules: {
     'vue/multi-word-component-names': 'off',
   },
-  parser: 'vue-eslint-perser',
+  parser: 'vue-eslint-parser',
 };
