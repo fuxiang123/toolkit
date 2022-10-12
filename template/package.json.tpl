@@ -17,6 +17,7 @@
     "url": "{{ gitrepo }}.git"
   },
   "scripts": {
+    "build": "cross-env NODE_ENV=production rollup -c",
     "test": "node ./__tests__/test.test.js"
   },
   "bugs": {
