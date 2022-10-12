@@ -5,7 +5,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "cross-env NODE_ENV=production rollup -c",
+    "build": "lerna run build --stream --sort",
     "create:pkg": "node scripts/create",
     "lint": "eslint --ext .ts,.js --ignore-path .gitignore --fix packages",
     "lint:error": "eslint --ext .ts,.js --ignore-path .gitignore --fix --quiet packages",
