@@ -1,6 +1,6 @@
 {
   "name": "@neuton/{{ dirName }}",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "homepage": "{{ gitrepo }}{{/{{ dirName }}#readme",
   "license": "ISC",

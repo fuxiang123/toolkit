@@ -4,6 +4,7 @@ import path from 'path';
 import json from '@rollup/plugin-json';
 import postcss from 'rollup-plugin-postcss';
 import babel from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
@@ -23,6 +24,7 @@ const plugins = [
   }),
   babel({ babelHelpers: 'bundled' }),
   typescript(),
+  commonjs(),
   shebang(),
 ];
 

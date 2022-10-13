@@ -6,9 +6,6 @@
   "bin": {
     "commit-check": "./dist/index.js"
   },
-  "devDependencies": {
-    "tslib": "^2.4.0"
-  },
   "files": [
     "dist"
   ],

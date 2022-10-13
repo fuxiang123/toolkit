@@ -4,7 +4,9 @@
   "description": "> TODO: description",
   "homepage": "https://github.com/fuxiang123/test-learn#readme",
   "license": "ISC",
-  "main": "tsconfig.json",
+  "files": [
+    "tsconfig.json"
+  ],
   "publishConfig": {
     "registry": "http://82.157.120.5:4873/"
   },
