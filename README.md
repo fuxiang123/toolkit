@@ -33,7 +33,8 @@ pnpm create:pkg test-demo
 
 ### 发布项目
 
-> 注：如有不需要发布到 npm 的项目，需要在 package.json 里面添加 `private:true` 属性
+> 注 1：如有不需要发布到 npm 的项目，需要在 package.json 里面添加 `private:true` 属性
+> 注 2：只有在 master 分支上才可以对项目进行发布
 
 ```
 pnpm publish:pkg
