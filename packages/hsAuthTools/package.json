@@ -1,0 +1,29 @@
+{
+  "name": "@neuton/hsAuthTools",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "homepage": "https://gitee.com/ningdongyiliao/neuton-toolkit#readme",
+  "license": "ISC",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "http://82.157.120.5:4873/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/ningdongyiliao/neuton-toolkit.git"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "test": "node ./__tests__/test.test.js"
+  },
+  "bugs": {
+    "url": "https://gitee.com/ningdongyiliao/neuton-toolkit/issues"
+  },
+  "dependencies": {
+    "axios": "^1.1.2"
+  }
+}
