@@ -1,11 +1,11 @@
-# `@neuton/hsAuthTools`
+# `@neuton/hs-auth-tools`
 
 > TODO: 作用描述
 
 ## 使用方式
 
 ```
-import hsauthtoolsfrom 'hsAuthTools';
+import hsauthtools from 'hs-auth-tools';
 
 // TODO: API演示
 ```
