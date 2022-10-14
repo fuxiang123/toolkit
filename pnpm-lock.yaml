@@ -73,7 +73,7 @@ importers:
   packages/commit-check:
     specifiers: {}
 
-  packages/hsAuthTools:
+  packages/hs-auth-tools:
     specifiers:
       axios: ^1.1.2
     dependencies:

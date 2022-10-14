@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/fuxiang123/test-learn/compare/@neuton/tsconfig@1.1.1...@neuton/tsconfig@1.1.2) (2022-10-14)
+
+### Bug Fixes
+
+- **root:** 修复 ts 构建报错 ([b2603fc](https://github.com/fuxiang123/test-learn/commit/b2603fc478c991be265849c4a17eaf46ca5e1d8e))
+
 ## [1.1.1](https://github.com/fuxiang123/test-learn/compare/@neuton/tsconfig@1.1.0...@neuton/tsconfig@1.1.1) (2022-10-03)
 
 ### Bug Fixes
