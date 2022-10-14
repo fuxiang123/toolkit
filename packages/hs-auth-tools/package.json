@@ -1,21 +1,20 @@
 {
-  "name": "@neuton/commit-check",
-  "version": "1.1.4",
+  "name": "@neuton/hs-auth-tools",
+  "version": "1.0.0",
   "description": "> TODO: description",
-  "homepage": "https://github.com/fuxiang123/test-learn#readme",
-  "bin": {
-    "commit-check": "./dist/index.js"
-  },
+  "homepage": "https://gitee.com/ningdongyiliao/neuton-toolkit#readme",
+  "license": "ISC",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
   "files": [
     "dist"
   ],
-  "license": "ISC",
   "publishConfig": {
     "registry": "http://82.157.120.5:4873/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fuxiang123/test-learn.git"
+    "url": "https://gitee.com/ningdongyiliao/neuton-toolkit.git"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup -c",
@@ -23,5 +22,8 @@
   },
   "bugs": {
     "url": "https://gitee.com/ningdongyiliao/neuton-toolkit/issues"
+  },
+  "dependencies": {
+    "axios": "^1.1.2"
   }
 }
