@@ -10,6 +10,7 @@
     "lint": "eslint --ext .ts,.js --ignore-path .gitignore --fix packages",
     "lint:error": "eslint --ext .ts,.js --ignore-path .gitignore --fix --quiet packages",
     "commit": "npx git-cz",
+    "prepublush:pkg": "npm run build",
     "publish:pkg": "lerna publish",
     "prepare": "npx husky install"
   },

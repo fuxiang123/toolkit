@@ -1,11 +1,14 @@
 # `@neuton/tsconfig`
 
-> TODO: 作用描述
+> ts 通用配置文件
 
 ## 使用方式
 
 ```
-import tsconfigfrom 'tsconfig';
-
-// TODO: API演示
+{
+  "extends": "@neuton/tsconfig",
+  "compilerOptions": {
+    // ...自定义规则
+  }
+}
 ```
