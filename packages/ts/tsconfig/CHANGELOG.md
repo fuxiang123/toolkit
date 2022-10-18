@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/fuxiang123/test-learn/compare/@neuton/tsconfig@1.1.2...@neuton/tsconfig@1.1.3) (2022-10-18)
+
+**Note:** Version bump only for package @neuton/tsconfig
+
 ## [1.1.2](https://github.com/fuxiang123/test-learn/compare/@neuton/tsconfig@1.1.1...@neuton/tsconfig@1.1.2) (2022-10-14)
 
 ### Bug Fixes
