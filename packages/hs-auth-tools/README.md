@@ -23,8 +23,8 @@ initHsSetting({
   projectFlag: 'cdx', // 必填。当前项目标识
   isTestEnv: false, // 可选。是否是测试环境， 默认false（即默认生产环境）
   useHsTrack: false, // 可选。是否使用火石埋点，默认false
-  authMode: 'wechat', // 授权方式, 'wechat' | 'wechat_work' | 'scan'。默认wechat
-  disableAuth: false, // 是否禁用火石授权登录流程(微邀请功能)，默认false
+  authMode: 'wechat', // 可选。授权方式, 'wechat' | 'wechat_work' | 'scan'。默认wechat
+  disableAuth: false, // 可选。是否禁用火石授权登录流程(微邀请功能)，默认false
 });
 ```
 
