@@ -4,6 +4,7 @@ import { getHsSetting } from './hsSetting';
 import { hsProductConfig, hsTestConfig } from '../constants';
 import { getHsConfig, getHsUserInfo, getUrlUid } from './hsBase';
 import { pathStorage, tokenStorage, userStorage } from '../storages';
+import { HsUserInfo } from './types';
 
 /** 获取业务路径 */
 export function getUrlPath() {
@@ -27,7 +28,7 @@ export async function getUserInfoByToken(token: string) {
     const res = await axios.post(`${hsStatisticsUrl}users/get_user_info/`, { cache_token: token });
     if (res.data['code'] === 200 && res.data['data']) {
       tokenStorage.set(token);
-      return JSON.stringify(res.data['data']);
+      return res.data['data'] as HsUserInfo;
     } else {
       return null;
     }
@@ -75,7 +76,7 @@ export const checkAuth = async () => {
     const uid = getUrlUid();
     const userInfo = await getUserInfoByUid();
     if (uid && userInfo) {
-      userStorage.set(userInfo);
+      userStorage.set(JSON.stringify(userInfo));
       pathStorage.remove();
       router.replace(path);
       return true;

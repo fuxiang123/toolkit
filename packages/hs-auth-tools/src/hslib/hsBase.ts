@@ -3,6 +3,7 @@ import { getHsSetting } from './hsSetting';
 import { hsProductConfig, hsTestConfig, tokenKey, uidKey } from '../constants';
 import { userStorage } from '../storages';
 import { getQueryVariable } from '../utils';
+import { HsUserInfo } from './types';
 
 /** 获取hs配置 */
 export const getHsConfig = () => {
@@ -15,10 +16,11 @@ export function getUrlUid() {
 }
 
 /** 获取本地用户信息,如果过期返回null */
-export function getHsUserInfo() {
-  const userInfo = userStorage.get();
-  if (userInfo) {
-    const { expire_date } = JSON.parse(userInfo);
+export function getHsUserInfo(): HsUserInfo | null {
+  const userInfoJson = userStorage.get();
+  if (userInfoJson) {
+    const userInfo = JSON.parse(userInfoJson);
+    const { expire_date } = userInfo;
     const now = new Date().getTime();
     if (now > expire_date) {
       userStorage.remove();
@@ -35,7 +37,7 @@ export function getHsUserInfo() {
 export function getHsUserId() {
   const userInfo = getHsUserInfo();
   if (userInfo) {
-    return JSON.parse(userInfo).openid;
+    return userInfo.openid;
   } else {
     const { isTestEnv, disableAuth } = getHsSetting();
     // 测试环境下，如果禁用了登录流程，返回一个测试用户
@@ -50,7 +52,7 @@ export function getHsUserId() {
 export async function getCacheToken() {
   const userInfo = getHsUserInfo();
   if (userInfo) {
-    const { openid, expire_date } = JSON.parse(userInfo);
+    const { openid, expire_date } = userInfo;
     const { hsStatisticsUrl } = getHsConfig();
     try {
       const res = await axios.post(`${hsStatisticsUrl}users/get_cache_token/`, {
