@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/hs-auth-tools@2.0.4...@neuton/hs-auth-tools@2.1.0) (2022-10-19)
+
+### Features
+
+- **hs-auth-tools:** 添加获取票据功能，传入 initTestUser 功能 ([11543c9](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/11543c9cdce6d4c47c3aebf2d2790cff7e15aaaf))
+
 ## [2.0.4](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/hs-auth-tools@2.0.3...@neuton/hs-auth-tools@2.0.4) (2022-10-19)
 
 **Note:** Version bump only for package @neuton/hs-auth-tools
