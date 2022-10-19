@@ -1,6 +1,5 @@
 import axios from 'axios';
 import urlParse from 'url-parse';
-import qs from 'qs';
 import { getHsSetting } from './hsSetting';
 import { hsProductConfig, hsTestConfig, ticketKey } from '../constants';
 import { getHsConfig, getHsUserInfo, getHsTicket } from './hsBase';
@@ -59,15 +58,15 @@ export const checkAuth = async () => {
     path = window.location.href ?? '/';
   }
   if (user) {
-    const searchQuery = qs.parse(window.location.search);
+    const newQuery = new URLSearchParams(window.location.search);
     // 把微邀请的票据替换掉旧路径中的票据信息
-    if (searchQuery[ticketKey]) {
+    if (newQuery.get(ticketKey)) {
       const url = urlParse(path);
       // 获取存储的路径中的query
-      const query = qs.parse(url.query.slice(1));
+      const oldQuery = new URLSearchParams(url.query);
       // 将微邀请的票据替换掉旧路径中的票据信息
-      query[ticketKey] = searchQuery[ticketKey];
-      url.set('query', query);
+      oldQuery.set(ticketKey, newQuery[ticketKey]);
+      url.set('query', oldQuery.toString());
       path = url.toString();
     }
     // 已经登录状态

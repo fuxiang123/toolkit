@@ -1,6 +1,6 @@
 import { HsSetting } from './types';
 
-let hsSetting: Omit<HsSetting, 'useHsTrack'> = {
+const hsSetting: Omit<HsSetting, 'useHsTrack'> = {
   isTestEnv: false,
   projectFlag: '',
   authMode: 'wechat',
@@ -18,8 +18,14 @@ export const getHsSetting = () => {
 
 /** 初始化火石配置 */
 export const initHsSetting = (setting: HsSetting) => {
+  const { projectFlag, isTestEnv = false, authMode = 'wechat', disableAuth = false, initTestUser = '' } = setting;
+
   if (!setting.projectFlag) {
     throw new Error('projectFlag is required');
   }
-  hsSetting = setting;
+  hsSetting.authMode = authMode;
+  hsSetting.disableAuth = disableAuth;
+  hsSetting.isTestEnv = isTestEnv;
+  hsSetting.projectFlag = projectFlag;
+  hsSetting.initTestUser = initTestUser;
 };

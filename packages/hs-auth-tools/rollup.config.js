@@ -29,7 +29,7 @@ const plugins = [
   babel({
     babelHelpers: 'bundled',
     extensions,
-    presets: ['@babel/preset-env', '@babel/preset-typescript'],
+    presets: ['@babel/preset-typescript'],
   }), // babelHelpers是bable的最佳实践方案 extensions编译的扩展文件
 ];
 
@@ -59,5 +59,5 @@ module.exports = {
     },
   ],
   plugins,
-  external: ['axios', 'vue-router', 'vue'],
+  external: ['axios', 'vue'],
 };
