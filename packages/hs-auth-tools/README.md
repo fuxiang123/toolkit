@@ -68,7 +68,7 @@ hsTrack('埋点点位,如：ld_user_point/chi_ctr_search', {
 ```javascript
 import { openOutPage } from '@neuton/hs-auth-tools';
 
-openOutPage('第三方页面url');
+openOutPage('填写第三方页面url');
 ```
 
 ### 获取火石相关信息
