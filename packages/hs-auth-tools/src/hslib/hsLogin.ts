@@ -1,21 +1,11 @@
 import axios from 'axios';
-import { useRouter } from 'vue-router';
+import urlParse from 'url-parse';
+import qs from 'qs';
 import { getHsSetting } from './hsSetting';
-import { hsProductConfig, hsTestConfig } from '../constants';
-import { getHsConfig, getHsUserInfo, getUrlUid } from './hsBase';
+import { hsProductConfig, hsTestConfig, ticketKey } from '../constants';
+import { getHsConfig, getHsUserInfo, getHsTicket } from './hsBase';
 import { pathStorage, tokenStorage, userStorage } from '../storages';
 import { HsUserInfo } from './types';
-
-/** 获取业务路径 */
-export function getUrlPath() {
-  const urls = window.location.href.split('#');
-  let toPath = '';
-  if (urls.length > 1) {
-    // eslint-disable-next-line prefer-destructuring
-    toPath = urls[1];
-  }
-  return toPath;
-}
 
 /** 根据票据获取用户信息 */
 export async function getUserInfoByToken(token: string) {
@@ -37,10 +27,10 @@ export async function getUserInfoByToken(token: string) {
   }
 }
 /** 根据票据获取用户信息,票据从链接里获取 */
-export async function getUserInfoByUid() {
-  const uid = getUrlUid();
-  if (uid) {
-    const token = await getUserInfoByToken(uid);
+export async function getUserInfoByTicket() {
+  const ticket = getHsTicket();
+  if (ticket) {
+    const token = await getUserInfoByToken(ticket);
     return token;
   } else {
     return null;
@@ -62,26 +52,42 @@ export const toOAuth = () => {
 
 /** 走微邀请流程,没有中转页 */
 export const checkAuth = async () => {
-  const router = useRouter();
   const user = getHsUserInfo();
   let path = pathStorage.get();
+
   if (!path) {
-    path = getUrlPath() ?? '/';
+    path = window.location.href ?? '/';
   }
   if (user) {
+    const searchQuery = qs.parse(window.location.search);
+    // 把微邀请的票据替换掉旧路径中的票据信息
+    if (searchQuery[ticketKey]) {
+      const url = urlParse(path);
+      // 获取存储的路径中的query
+      const query = qs.parse(url.query.slice(1));
+      // 将微邀请的票据替换掉旧路径中的票据信息
+      query[ticketKey] = searchQuery[ticketKey];
+      url.set('query', query);
+      path = url.toString();
+    }
+    // 已经登录状态
     pathStorage.remove();
-    router.replace(path);
+    window.location.replace(path);
     return true;
   } else {
-    const uid = getUrlUid();
-    const userInfo = await getUserInfoByUid();
-    if (uid && userInfo) {
+    // 未登录状态
+    const ticketToken = getHsTicket();
+    const userInfo = await getUserInfoByTicket();
+    // 有票据信息，通过票据获取用户信息
+    if (ticketToken && userInfo) {
       userStorage.set(JSON.stringify(userInfo));
       pathStorage.remove();
-      router.replace(path);
       return true;
     }
+
+    // 保存当前路径
     pathStorage.set(path);
+    // 没有票据信息，返回false
     return false;
   }
 };

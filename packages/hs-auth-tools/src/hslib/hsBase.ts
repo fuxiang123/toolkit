@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { getHsSetting } from './hsSetting';
-import { hsProductConfig, hsTestConfig, tokenKey, uidKey } from '../constants';
+import { hsProductConfig, hsTestConfig, tokenKey, ticketKey } from '../constants';
 import { userStorage } from '../storages';
 import { getQueryVariable } from '../utils';
 import { HsUserInfo } from './types';
@@ -10,10 +10,10 @@ export const getHsConfig = () => {
   return getHsSetting().isTestEnv ? hsTestConfig : hsProductConfig;
 };
 
-/** 获取微邀请票据 */
-export function getUrlUid() {
-  return getQueryVariable(uidKey);
-}
+/** 获取微邀请票据信息 */
+export const getHsTicket = () => {
+  return getQueryVariable(ticketKey);
+};
 
 /** 获取本地用户信息,如果过期返回null */
 export function getHsUserInfo(): HsUserInfo | null {
@@ -39,10 +39,10 @@ export function getHsUserId() {
   if (userInfo) {
     return userInfo.openid;
   } else {
-    const { isTestEnv, disableAuth } = getHsSetting();
-    // 测试环境下，如果禁用了登录流程，返回一个测试用户
-    if (disableAuth && isTestEnv) {
-      return 'oM17MwZkSfOBRKoMb-T3c3KmLHWM';
+    const { disableAuth, isTestEnv, initTestUser } = getHsSetting();
+    // 如果禁用了登录流程，返回一个测试用户
+    if (isTestEnv && disableAuth) {
+      return initTestUser;
     }
     return '';
   }
@@ -85,18 +85,18 @@ export async function openOutPage(url: string) {
       const index = url.indexOf('#');
       const indexUrl = url.substring(0, index);
       if (indexUrl.indexOf('?') > -1) {
-        let newIndexUrl = `${indexUrl}&${uidKey}=${token}`;
+        let newIndexUrl = `${indexUrl}&${ticketKey}=${token}`;
         newIndexUrl = url.replace(indexUrl, newIndexUrl);
         window.location.href = newIndexUrl;
       } else {
-        let newIndexUrl = `${indexUrl}?${uidKey}=${token}`;
+        let newIndexUrl = `${indexUrl}?${ticketKey}=${token}`;
         newIndexUrl = url.replace(indexUrl, newIndexUrl);
         window.location.href = newIndexUrl;
       }
     } else if (url.indexOf('?') > -1) {
-      window.location.href = `${url}&${uidKey}=${token}`;
+      window.location.href = `${url}&${ticketKey}=${token}`;
     } else {
-      window.location.href = `${url}?${uidKey}=${token}`;
+      window.location.href = `${url}?${ticketKey}=${token}`;
     }
   } else {
     window.location.href = url;

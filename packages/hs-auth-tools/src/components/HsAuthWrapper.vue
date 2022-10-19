@@ -6,7 +6,7 @@
   <!-- 页面正文 -->
   <slot v-else-if="hasAuth"></slot>
   <!-- 无权限时显示的页面 -->
-  <Remind v-else />
+  <Remind v-else-if="isWechatMode" />
 </template>
 
 <script lang="ts" setup>
@@ -18,13 +18,16 @@ import Remind from './Remind.vue';
 
 const hasAuth = ref(false);
 const loading = ref(true);
+const isWechatMode = ref(false);
 
 onMounted(async () => {
   const isWechat = getIsWxClient();
   const hsSetting = getHsSetting();
+  isWechatMode.value = hsSetting.authMode !== 'scan';
+  
   if (hsSetting.disableAuth) {
     hasAuth.value = true;
-  } else if (isWechat) {
+  } else if (isWechat || hsSetting.authMode === 'scan') {
     const authRes = await checkAuth();
     if (authRes) {
       hasAuth.value = authRes;

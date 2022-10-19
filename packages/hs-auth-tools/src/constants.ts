@@ -1,7 +1,7 @@
-export const userInfoKey = 'userInfo';
-export const pathKey = 'cdxToPath';
-export const uidKey = 'ticket';
-export const tokenKey = 'cache_token';
+export const userInfoKey = 'userInfo'; // 用户信息key
+export const pathKey = 'cdxToPath'; // 用于记录跳转到授权页前的页面路径
+export const ticketKey = 'ticket'; // 火石票据key
+export const tokenKey = 'cache_token'; // 火石缓存tokenkey
 
 export const hsTestConfig = {
   clientId: 'zhongliu',
