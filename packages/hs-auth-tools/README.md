@@ -16,6 +16,8 @@ pnpm install @neuton/hs-auth-tools
 
 ## 初始化
 
+在项目入口处（如 main.js）调用 initHsSetting
+
 ```javascript
 import { initHsSetting } from '@neuton/hs-auth-tools';
 
@@ -31,6 +33,8 @@ initHsSetting({
 ## 使用方式
 
 ### 接入微邀请
+
+使用 HsAuthWrapper 包裹项目根组件即可
 
 ```vue
 <template>
