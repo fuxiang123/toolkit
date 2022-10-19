@@ -6,11 +6,34 @@ import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
+import vue from 'rollup-plugin-vue';
+import image from '@rollup/plugin-image';
+import babel from '@rollup/plugin-babel';
+import less from 'rollup-plugin-less';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
+const extensions = ['.ts', '.vue'];
+
 // 公共插件配置
-const plugins = [json(), nodeResolve(), typescript(), commonjs()];
+const plugins = [
+  vue({
+    target: 'browser',
+  }),
+  json(),
+  nodeResolve(),
+  typescript(),
+  commonjs(),
+  less({
+    output: 'dist/index.css',
+  }), // less编译
+  image(),
+  babel({
+    babelHelpers: 'bundled',
+    extensions,
+    presets: ['@babel/preset-env', '@babel/preset-typescript'],
+  }), // babelHelpers是bable的最佳实践方案 extensions编译的扩展文件
+];
 
 // 如果不是开发环境，开启压缩
 if (!isDev) plugins.push(terser());
@@ -38,5 +61,5 @@ module.exports = {
     },
   ],
   plugins,
-  external: ['axios'],
+  external: ['axios', 'vue-router', 'vue'],
 };
