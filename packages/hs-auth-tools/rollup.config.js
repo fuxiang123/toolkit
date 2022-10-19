@@ -9,7 +9,7 @@ import typescript from '@rollup/plugin-typescript';
 import vue from 'rollup-plugin-vue';
 import image from '@rollup/plugin-image';
 import babel from '@rollup/plugin-babel';
-import less from 'rollup-plugin-less';
+import postcss from 'rollup-plugin-postcss';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -20,13 +20,11 @@ const plugins = [
   vue({
     target: 'browser',
   }),
+  postcss(),
   json(),
   nodeResolve(),
   typescript(),
   commonjs(),
-  less({
-    output: 'dist/index.css',
-  }), // less编译
   image(),
   babel({
     babelHelpers: 'bundled',
