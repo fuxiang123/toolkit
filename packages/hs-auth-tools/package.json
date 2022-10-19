@@ -1,6 +1,6 @@
 {
   "name": "@neuton/hs-auth-tools",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "> TODO: description",
   "homepage": "https://gitee.com/ningdongyiliao/neuton-toolkit#readme",
   "license": "ISC",
@@ -25,9 +25,9 @@
   },
   "peerDependencies": {
     "axios": ">=1.0.0",
+    "less": ">=3.0.0",
     "vue": ">=3.0.0",
-    "vue-router": ">=3.0.0",
-    "less": ">=3.0.0"
+    "vue-router": ">=3.0.0"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.18.6",
