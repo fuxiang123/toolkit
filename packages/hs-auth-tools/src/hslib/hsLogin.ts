@@ -2,20 +2,20 @@ import axios from 'axios';
 import { getHsSetting } from './hsSetting';
 import { hsProductConfig, hsTestConfig, ticketKey } from '../constants';
 import { getHsConfig, getHsUserInfo, getHsTicket } from './hsBase';
-import { pathStorage, tokenStorage, userStorage } from '../storages';
+import { getPathStorage, getTokenStorage, getUserStorage } from '../storages';
 import { HsUserInfo } from './types';
 
 /** 根据票据获取用户信息 */
 export async function getUserInfoByToken(token: string) {
   const { hsStatisticsUrl } = getHsSetting().isTestEnv ? hsTestConfig : hsProductConfig;
-  const localToken = tokenStorage.get();
+  const localToken = getTokenStorage().get();
   if (token === localToken) {
     return getHsUserInfo();
   }
   try {
     const res = await axios.post(`${hsStatisticsUrl}users/get_user_info/`, { cache_token: token });
     if (res.data['code'] === 200 && res.data['data']) {
-      tokenStorage.set(token);
+      getTokenStorage().set(token);
       return res.data['data'] as HsUserInfo;
     } else {
       return null;
@@ -37,7 +37,7 @@ export async function getUserInfoByTicket() {
 
 /** 授权登录 */
 export const toOAuth = () => {
-  userStorage.remove();
+  getUserStorage().remove();
   const { clientId, hcpRedirectUrl, hcpUrl } = getHsConfig();
   const { authMode: request_mode, projectFlag: state } = getHsSetting();
   const response_type = 'code';
@@ -51,7 +51,7 @@ export const toOAuth = () => {
 /** 走微邀请流程,没有中转页 */
 export const checkAuth = async () => {
   const user = getHsUserInfo();
-  let path = pathStorage.get();
+  let path = getPathStorage().get();
 
   if (!path) {
     path = window.location.href ?? '/';
@@ -67,7 +67,7 @@ export const checkAuth = async () => {
       path = url.toString();
     }
     // 已经登录状态
-    pathStorage.remove();
+    getPathStorage().remove();
     window.location.replace(path);
     return true;
   } else {
@@ -76,13 +76,13 @@ export const checkAuth = async () => {
     const userInfo = await getUserInfoByTicket();
     // 有票据信息，通过票据获取用户信息
     if (ticketToken && userInfo) {
-      userStorage.set(JSON.stringify(userInfo));
-      pathStorage.remove();
+      getUserStorage().set(JSON.stringify(userInfo));
+      getPathStorage().remove();
       return true;
     }
 
     // 保存当前路径
-    pathStorage.set(path);
+    getPathStorage().set(path);
     // 没有票据信息，返回false
     return false;
   }

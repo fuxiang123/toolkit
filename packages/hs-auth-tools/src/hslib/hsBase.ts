@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getHsSetting } from './hsSetting';
 import { hsProductConfig, hsTestConfig, tokenKey, ticketKey } from '../constants';
-import { userStorage } from '../storages';
+import { getUserStorage } from '../storages';
 import { getQueryVariable } from '../utils';
 import { HsUserInfo } from './types';
 
@@ -17,13 +17,13 @@ export const getHsTicket = () => {
 
 /** 获取本地用户信息,如果过期返回null */
 export function getHsUserInfo(): HsUserInfo | null {
-  const userInfoJson = userStorage.get();
+  const userInfoJson = getUserStorage().get();
   if (userInfoJson) {
     const userInfo = JSON.parse(userInfoJson);
     const { expire_date } = userInfo;
     const now = new Date().getTime();
     if (now > expire_date) {
-      userStorage.remove();
+      getUserStorage().remove();
       return null;
     } else {
       return userInfo;
