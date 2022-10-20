@@ -73,8 +73,8 @@ export const toPage = () => {
     pathSearch.set(ticketKey, ticketVal);
     path.search = `?${pathSearch.toString()}`;
   }
-  window.location.replace(`https://${window.location.host}${window.location.pathname}${path.search}${path.hash}`);
   getPathStorage().remove();
+  window.location.replace(`https://${window.location.host}${window.location.pathname}${path.search}${path.hash}`);
 };
 
 /** 走微邀请流程,没有中转页 */
@@ -90,7 +90,8 @@ export const checkAuth = async () => {
     if (ticketToken && userInfo) {
       getUserStorage().set(JSON.stringify(userInfo));
       toPage();
-      return true;
+    } else {
+      toOAuth();
     }
     return false;
   }

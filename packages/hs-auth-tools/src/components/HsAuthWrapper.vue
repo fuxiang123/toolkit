@@ -5,7 +5,7 @@
   </div>
   <!-- 页面正文 -->
   <slot v-else-if="hasAuth"></slot>
-  <!-- 无权限时显示的页面 -->
+  <!-- authMode为wechat且无权限时显示的页面 -->
   <Remind v-else-if="isWechatMode" />
 </template>
 
@@ -13,7 +13,7 @@
 import { onMounted, ref } from 'vue';
 import { checkAuth, toOAuth } from '../hslib/hsLogin';
 import { getHsSetting } from '../hslib/hsSetting';
-import { getPathStorage } from '../storages';
+import { getPathStorage, getUserStorage } from '../storages';
 import { getIsWxClient } from '../utils';
 import Remind from './Remind.vue';
 
@@ -25,18 +25,18 @@ onMounted(async () => {
   const isWechat = getIsWxClient();
   const hsSetting = getHsSetting();
   isWechatMode.value = hsSetting.authMode !== 'scan';
-  
+
   if (hsSetting.disableAuth) {
     hasAuth.value = true;
     loading.value = false;
-  } else if (isWechat || hsSetting.authMode === 'scan') {
+    return;
+  } 
+  
+  if (isWechat || hsSetting.authMode === 'scan') {
     const authRes = await checkAuth();
-    const hasPath = getPathStorage().get();
-    if (authRes && !hasPath) {
+    if (authRes) {
       hasAuth.value = authRes;
       loading.value = false;
-    } else {
-      toOAuth();
     }
   } else {
     loading.value = false;
