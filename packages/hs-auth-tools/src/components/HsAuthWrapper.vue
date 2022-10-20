@@ -13,6 +13,7 @@
 import { onMounted, ref } from 'vue';
 import { checkAuth, toOAuth } from '../hslib/hsLogin';
 import { getHsSetting } from '../hslib/hsSetting';
+import { getPathStorage } from '../storages';
 import { getIsWxClient } from '../utils';
 import Remind from './Remind.vue';
 
@@ -27,18 +28,19 @@ onMounted(async () => {
   
   if (hsSetting.disableAuth) {
     hasAuth.value = true;
+    loading.value = false;
   } else if (isWechat || hsSetting.authMode === 'scan') {
     const authRes = await checkAuth();
-    if (authRes) {
+    const hasPath = getPathStorage().get();
+    if (authRes && !hasPath) {
       hasAuth.value = authRes;
+      loading.value = false;
     } else {
       toOAuth();
-      return;
     }
-  }
-  setTimeout(() => {
+  } else {
     loading.value = false;
-  }, 500)
+  }
 });
 </script>
 <style scoped lang="less">

@@ -81,7 +81,6 @@ export const toPage = () => {
 export const checkAuth = async () => {
   const user = getHsUserInfo();
   if (user) {
-    toPage();
     return true;
   } else {
     // 未登录状态
