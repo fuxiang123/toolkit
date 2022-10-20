@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.2](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/hs-auth-tools@2.2.1...@neuton/hs-auth-tools@2.2.2) (2022-10-20)
+
+### Bug Fixes
+
+- **hs:** 优化授权跳转流程 ([fa2a6ee](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/fa2a6ee0f251099ae97afa0d39270e1b1d95f0a3))
+
 ## [2.2.1](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/hs-auth-tools@2.2.0...@neuton/hs-auth-tools@2.2.1) (2022-10-20)
 
 ### Bug Fixes
