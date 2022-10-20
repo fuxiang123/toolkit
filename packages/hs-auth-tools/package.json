@@ -1,6 +1,6 @@
 {
   "name": "@neuton/hs-auth-tools",
-  "version": "2.2.7",
+  "version": "2.2.8-alpha.0",
   "description": "火石微邀请、埋点库",
   "homepage": "https://gitee.com/ningdongyiliao/neuton-toolkit#readme",
   "license": "ISC",
