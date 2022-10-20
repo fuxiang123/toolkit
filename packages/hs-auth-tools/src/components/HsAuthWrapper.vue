@@ -36,7 +36,9 @@ onMounted(async () => {
       return;
     }
   }
-  loading.value = false;
+  setTimeout(() => {
+    loading.value = false;
+  }, 500)
 });
 </script>
 <style scoped lang="less">

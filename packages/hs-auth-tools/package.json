@@ -18,6 +18,7 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup -c",
+    "prepublish": "npm run build",
     "test": "node ./__tests__/test.test.js"
   },
   "bugs": {
