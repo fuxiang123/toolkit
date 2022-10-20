@@ -84,6 +84,15 @@ export const toPage = () => {
 /** 走微邀请流程,没有中转页 */
 export const checkAuth = async () => {
   const user = getHsUserInfo();
+  const pathStr = getPathStorage().get();
+
+  const path = pathStr
+    ? JSON.parse(pathStr)
+    : {
+        pathname: window.location.pathname,
+        search: window.location.search,
+        hash: window.location.hash,
+      };
   if (user) {
     return true;
   } else {
@@ -93,6 +102,7 @@ export const checkAuth = async () => {
     if (userInfo) {
       getUserStorage().set(JSON.stringify(userInfo));
       toPage();
+      return window.location.pathname === path.pathname;
     } else {
       toOAuth();
     }
