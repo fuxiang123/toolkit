@@ -37,6 +37,13 @@ export async function getUserInfoByTicket() {
 
 /** 授权登录 */
 export const toOAuth = () => {
+  const pathInfo = JSON.stringify({
+    search: window.location.search,
+    hash: window.location.hash,
+  });
+  // 跳转前保存当前url信息
+  getPathStorage().set(pathInfo);
+
   getUserStorage().remove();
   const { clientId, hcpRedirectUrl, hcpUrl } = getHsConfig();
   const { authMode: request_mode, projectFlag: state } = getHsSetting();
@@ -48,27 +55,33 @@ export const toOAuth = () => {
   window.location.replace(result);
 };
 
+/** 根据授权前保存的url信息跳转页面 */
+export const toPage = () => {
+  const pathStr = getPathStorage().get();
+  const path = pathStr
+    ? JSON.parse(pathStr)
+    : {
+        search: window.location.search,
+        hash: window.location.hash,
+      };
+  const newQuery = new URLSearchParams(window.location.search);
+  const ticketVal = newQuery.get(ticketKey);
+  // 把微邀请的票据替换掉旧路径中的票据信息
+  if (ticketVal) {
+    const pathSearch = new URLSearchParams(path.search);
+    // 将微邀请的票据替换掉旧路径中的票据信息
+    pathSearch.set(ticketKey, ticketVal);
+    path.search = `?${pathSearch.toString()}`;
+  }
+  window.location.replace(window.location.host + window.location.pathname + path.search + path.hash);
+  getPathStorage().remove();
+};
+
 /** 走微邀请流程,没有中转页 */
 export const checkAuth = async () => {
   const user = getHsUserInfo();
-  let path = getPathStorage().get();
-
-  if (!path) {
-    path = window.location.href ?? '/';
-  }
   if (user) {
-    const newQuery = new URLSearchParams(window.location.search);
-    const ticketVal = newQuery.get(ticketKey);
-    // 把微邀请的票据替换掉旧路径中的票据信息
-    if (ticketVal) {
-      const url = new URL(path);
-      // 将微邀请的票据替换掉旧路径中的票据信息
-      url.searchParams.set(ticketKey, ticketVal);
-      path = url.toString();
-    }
-    // 已经登录状态
-    getPathStorage().remove();
-    window.location.replace(path);
+    toPage();
     return true;
   } else {
     // 未登录状态
@@ -77,13 +90,9 @@ export const checkAuth = async () => {
     // 有票据信息，通过票据获取用户信息
     if (ticketToken && userInfo) {
       getUserStorage().set(JSON.stringify(userInfo));
-      getPathStorage().remove();
+      toPage();
       return true;
     }
-
-    // 保存当前路径
-    getPathStorage().set(path);
-    // 没有票据信息，返回false
     return false;
   }
 };
