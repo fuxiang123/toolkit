@@ -79,9 +79,8 @@ importers:
       '@rollup/plugin-babel': ^5.3.1
       '@rollup/plugin-image': ^3.0.0
       '@rollup/plugin-typescript': ^8.5.0
-      '@types/url-parse': ^1.4.8
       '@vue/compiler-sfc': ^3.2.41
-      axios: ^1.1.2
+      axios: ^1.1.3
       less: ^4.1.3
       rollup-plugin-postcss: ^3.1.4
       rollup-plugin-vue: ^6.0.0
@@ -92,7 +91,6 @@ importers:
       '@rollup/plugin-babel': 5.3.1_@babel+core@7.19.1+rollup@2.79.1
       '@rollup/plugin-image': 3.0.0_rollup@2.79.1
       '@rollup/plugin-typescript': 8.5.0_rollup@2.79.1+tslib@2.4.0
-      '@types/url-parse': 1.4.8
       '@vue/compiler-sfc': 3.2.41
       axios: 1.1.3
       less: 4.1.3
@@ -1828,10 +1826,6 @@ packages:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
       '@types/node': 18.7.23
-    dev: true
-
-  /@types/url-parse/1.4.8:
-    resolution: {integrity: sha512-zqqcGKyNWgTLFBxmaexGUKQyWqeG7HjXj20EuQJSJWwXe54BjX0ihIo5cJB9yAQzH8dNugJ9GvkBYMjPXs/PJw==}
     dev: true
 
   /@typescript-eslint/eslint-plugin/5.38.1_8ae953913f00bb7458e979b55dc2897e:

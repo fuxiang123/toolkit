@@ -3,5 +3,5 @@
   "compilerOptions": {
     "module": "ES6",
   },
-  "include": ["index.ts", "src/**/*.ts"],
+  "include": ["index.ts", "src/**/*.ts", "node_module/*/d.ts"],
 }

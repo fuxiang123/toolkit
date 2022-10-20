@@ -60,7 +60,6 @@ export const toOAuth = () => {
 /** 根据授权前保存的url信息跳转页面 */
 export const toPage = () => {
   const pathStr = getPathStorage().get();
-
   const path = pathStr
     ? JSON.parse(pathStr)
     : {
@@ -68,8 +67,6 @@ export const toPage = () => {
         search: window.location.search,
         hash: window.location.hash,
       };
-
-  console.log('path', path);
 
   const newQuery = new URLSearchParams(window.location.search);
   const ticketVal = newQuery.get(ticketKey);
@@ -80,9 +77,7 @@ export const toPage = () => {
     pathSearch.set(ticketKey, ticketVal);
     path.search = pathSearch.toString() ? `?${pathSearch.toString()}` : '';
   }
-  // getPathStorage().remove();
-  console.log('toPage', `https://${window.location.host}${path.pathname}${path.search}${path.hash}`);
-
+  getPathStorage().remove();
   window.location.replace(`https://${window.location.host}${path.pathname}${path.search}${path.hash}`);
 };
 
