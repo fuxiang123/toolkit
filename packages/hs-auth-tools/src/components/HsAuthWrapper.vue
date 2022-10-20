@@ -15,12 +15,15 @@ import { checkAuth } from '../hslib/hsLogin';
 import { getHsSetting } from '../hslib/hsSetting';
 import { getIsWxClient } from '../utils';
 import Remind from './Remind.vue';
+import { useRouter } from 'vue-router';
 
 const hasAuth = ref(false);
 const loading = ref(true);
 const isWechatMode = ref(false);
+const router = useRouter();
 
 onMounted(async () => {
+  await router.isReady()
   const isWechat = getIsWxClient();
   const hsSetting = getHsSetting();
   isWechatMode.value = hsSetting.authMode !== 'scan';

@@ -59,5 +59,5 @@ module.exports = {
     },
   ],
   plugins,
-  external: ['axios', 'vue'],
+  external: ['axios', 'vue', 'vue-router'],
 };
