@@ -78,7 +78,7 @@ export const toPage = () => {
     const pathSearch = new URLSearchParams(path.search);
     // 将微邀请的票据替换掉旧路径中的票据信息
     pathSearch.set(ticketKey, ticketVal);
-    path.search = `?${pathSearch.toString()}`;
+    path.search = pathSearch.toString() ? `?${pathSearch.toString()}` : '';
   }
   // getPathStorage().remove();
   console.log('toPage', `https://${window.location.host}${path.pathname}${path.search}${path.hash}`);
