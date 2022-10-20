@@ -11,9 +11,8 @@
 
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue';
-import { checkAuth, toOAuth } from '../hslib/hsLogin';
+import { checkAuth } from '../hslib/hsLogin';
 import { getHsSetting } from '../hslib/hsSetting';
-import { getPathStorage, getUserStorage } from '../storages';
 import { getIsWxClient } from '../utils';
 import Remind from './Remind.vue';
 
@@ -34,6 +33,8 @@ onMounted(async () => {
   
   if (isWechat || hsSetting.authMode === 'scan') {
     const authRes = await checkAuth();
+    console.log("authRes", authRes);
+    
     if (authRes) {
       hasAuth.value = authRes;
       loading.value = false;

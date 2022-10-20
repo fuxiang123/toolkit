@@ -80,14 +80,16 @@ export const toPage = () => {
 /** 走微邀请流程,没有中转页 */
 export const checkAuth = async () => {
   const user = getHsUserInfo();
+  console.log('href', window.location.href);
+  console.log('user', user);
   if (user) {
     return true;
   } else {
     // 未登录状态
-    const ticketToken = getHsTicket();
     const userInfo = await getUserInfoByTicket();
     // 有票据信息，通过票据获取用户信息
-    if (ticketToken && userInfo) {
+    console.log('userInfo', userInfo);
+    if (userInfo) {
       getUserStorage().set(JSON.stringify(userInfo));
       toPage();
     } else {
