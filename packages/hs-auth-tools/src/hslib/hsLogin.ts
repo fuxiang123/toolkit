@@ -73,7 +73,7 @@ export const toPage = () => {
     pathSearch.set(ticketKey, ticketVal);
     path.search = `?${pathSearch.toString()}`;
   }
-  window.location.replace(window.location.host + window.location.pathname + path.search + path.hash);
+  window.location.replace(`https://${window.location.host}${window.location.pathname}${path.search}${path.hash}`);
   getPathStorage().remove();
 };
 
