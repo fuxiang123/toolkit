@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import { checkAuth } from '../hslib/hsLogin';
 import { getHsSetting } from '../hslib/hsSetting';
 import { getIsWxClient } from '../utils';
@@ -33,8 +33,6 @@ onMounted(async () => {
   
   if (isWechat || hsSetting.authMode === 'scan') {
     const authRes = await checkAuth();
-    console.log("authRes", authRes);
-    
     if (authRes) {
       hasAuth.value = authRes;
       loading.value = false;
@@ -42,6 +40,18 @@ onMounted(async () => {
   } else {
     loading.value = false;
   }
+
+  window.addEventListener('hashchange', async function(){ 
+    const authRes = await checkAuth();
+    if (authRes) {
+      hasAuth.value = authRes;
+      loading.value = false;
+    }
+  })
+});
+
+onUnmounted(() => {
+  window.removeEventListener('hashchange', () => {});
 });
 </script>
 <style scoped lang="less">

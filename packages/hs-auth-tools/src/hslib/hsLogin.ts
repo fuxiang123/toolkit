@@ -38,6 +38,7 @@ export async function getUserInfoByTicket() {
 /** 授权登录 */
 export const toOAuth = () => {
   const pathInfo = JSON.stringify({
+    pathname: window.location.pathname,
     search: window.location.search,
     hash: window.location.hash,
   });
@@ -52,7 +53,6 @@ export const toOAuth = () => {
 
   const reqUrl = `${hcpUrl}auth/authorize`;
   const result = `${reqUrl}?client_id=${clientId}&request_mode=${request_mode}&response_type=${response_type}&grant_type=${grant_type}&redirect_uri=${hcpRedirectUrl}&state=${state}`;
-  console.log('toOAuth', getPathStorage().get());
 
   window.location.replace(result);
 };
@@ -60,18 +60,14 @@ export const toOAuth = () => {
 /** 根据授权前保存的url信息跳转页面 */
 export const toPage = () => {
   const pathStr = getPathStorage().get();
-  console.log('pathStr', pathStr);
 
   const path = pathStr
     ? JSON.parse(pathStr)
     : {
+        pathname: window.location.pathname,
         search: window.location.search,
         hash: window.location.hash,
       };
-
-  console.log('path', path);
-  console.log('path user', getUserStorage().get());
-
   const newQuery = new URLSearchParams(window.location.search);
   const ticketVal = newQuery.get(ticketKey);
   // 把微邀请的票据替换掉旧路径中的票据信息
@@ -82,21 +78,18 @@ export const toPage = () => {
     path.search = `?${pathSearch.toString()}`;
   }
   getPathStorage().remove();
-  window.location.replace(`https://${window.location.host}${window.location.pathname}${path.search}${path.hash}`);
+  window.location.replace(`https://${window.location.host}${path.pathname}${path.search}${path.hash}`);
 };
 
 /** 走微邀请流程,没有中转页 */
 export const checkAuth = async () => {
   const user = getHsUserInfo();
-  console.log('href', window.location.href);
-  console.log('user', user);
   if (user) {
     return true;
   } else {
     // 未登录状态
     const userInfo = await getUserInfoByTicket();
     // 有票据信息，通过票据获取用户信息
-    console.log('userInfo', userInfo);
     if (userInfo) {
       getUserStorage().set(JSON.stringify(userInfo));
       toPage();
