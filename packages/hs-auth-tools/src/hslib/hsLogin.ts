@@ -52,18 +52,26 @@ export const toOAuth = () => {
 
   const reqUrl = `${hcpUrl}auth/authorize`;
   const result = `${reqUrl}?client_id=${clientId}&request_mode=${request_mode}&response_type=${response_type}&grant_type=${grant_type}&redirect_uri=${hcpRedirectUrl}&state=${state}`;
+  console.log('toOAuth', getPathStorage().get());
+
   window.location.replace(result);
 };
 
 /** 根据授权前保存的url信息跳转页面 */
 export const toPage = () => {
   const pathStr = getPathStorage().get();
+  console.log('pathStr', pathStr);
+
   const path = pathStr
     ? JSON.parse(pathStr)
     : {
         search: window.location.search,
         hash: window.location.hash,
       };
+
+  console.log('path', path);
+  console.log('path user', getUserStorage().get());
+
   const newQuery = new URLSearchParams(window.location.search);
   const ticketVal = newQuery.get(ticketKey);
   // 把微邀请的票据替换掉旧路径中的票据信息
