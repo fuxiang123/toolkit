@@ -8,4 +8,9 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
   },
   parser: 'vue-eslint-parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
 };
