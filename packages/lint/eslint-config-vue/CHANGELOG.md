@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.9](https://github.com/fuxiang123/test-learn/compare/@neuton/eslint-config-vue@1.1.8...@neuton/eslint-config-vue@1.1.9) (2022-10-22)
+
+### Bug Fixes
+
+- **eslint-config-vue:** 添加 jsx 支持 ([e99d507](https://github.com/fuxiang123/test-learn/commit/e99d507f23a66dc30b46603d6c0e17c50c126e98))
+
 ## [1.1.8](https://github.com/fuxiang123/test-learn/compare/@neuton/eslint-config-vue@1.1.7...@neuton/eslint-config-vue@1.1.8) (2022-10-03)
 
 ### Bug Fixes
