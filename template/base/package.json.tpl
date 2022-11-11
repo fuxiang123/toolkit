@@ -21,9 +21,6 @@
     "prepublish": "npm run build",
     "test": "node ./__tests__/test.test.js"
   },
-  "devDependencies": {
-    "@neuton/tsconfig": "workspace:*"
-  },
   "bugs": {
     "url": "{{ gitrepo }}/issues"
   }

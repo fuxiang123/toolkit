@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const templateFile = require('template-file');
 
-module.exports = async (projectPath, templatePoints, templatePath) => {
+module.exports = async (projectPath, templatePath, templatePoints) => {
   if (fs.existsSync(projectPath)) throw new Error('项目已存在');
 
   fs.mkdirSync(projectPath, { recursive: true });

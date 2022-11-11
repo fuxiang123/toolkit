@@ -6,6 +6,7 @@
  */
 const createProject = require('./utils/createProject');
 const resolveCommand = require('./utils/resolveCommand');
+const install = require('./utils/install');
 
 const { projectBaseName, projectName, dirName, dirPath, dirFullPath, templatePath } = resolveCommand();
 
@@ -27,4 +28,9 @@ const templatePoints = {
   registry: 'http://82.157.120.5:4873/',
 };
 
-createProject(dirFullPath, templatePoints, templatePath);
+const init = async () => {
+  await createProject(dirFullPath, templatePath, templatePoints);
+  install(dirFullPath);
+};
+
+init();
