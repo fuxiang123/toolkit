@@ -1,5 +1,5 @@
 const path = require('path');
-const { Command } = require('commander');
+const { program } = require('commander');
 const toCamelCase = require('./toCamelCase');
 
 // 模板文件路径
@@ -9,12 +9,12 @@ const templatePaths = {
 };
 
 module.exports = function () {
-  const program = new Command()
+  program
     .option('-p, --projectName [name]', '项目名称: 如 -p @neutpn/my-project')
     .option('-t, --template [vue | default]', '模板名称: 如 -d vue')
-    .parse();
+    .parse(process.argv);
 
-  const opts = program.parse().opts();
+  const opts = program.opts();
   const dirPath = program.args[0];
   const dirPathArr = dirPath.split('/');
   // 默认项目名
@@ -22,7 +22,6 @@ module.exports = function () {
 
   // 项目根路径
   const target = path.resolve(process.cwd(), 'packages');
-
   return {
     // 项目基本名称。例如：@neuton/my-project，my-project就是基本名称
     projectBaseName,

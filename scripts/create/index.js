@@ -1,8 +1,8 @@
 /**
  * 通过模板快速生成新项目
- * 命令：npm run create:pkg <目录名称> -p <项目名称> -t <项目模板>
+ * 命令：npm run create:pkg <目录名称> -- -p <项目名称> -t <项目模板>
  * 例: npm run create:pkg saas/test 在saas目录下创建test目录，项目名默认test
- * 例: npm run create:pkg saas/test -p vue-project -t vue 在saas目录下创建test目录，项目名为vue-project，模板为vue
+ * 例: npm run create:pkg saas/test -- -p vue-project -t vue 在saas目录下创建test目录，项目名为vue-project，模板为vue
  */
 const createProject = require('./utils/createProject');
 const resolveCommand = require('./utils/resolveCommand');
