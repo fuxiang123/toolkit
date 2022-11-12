@@ -129,30 +129,6 @@ importers:
       eslint-plugin-vue: 9.5.1_eslint@7.32.0
       vue-eslint-parser: 9.1.0_eslint@7.32.0
 
-  packages/saas/test:
-    specifiers:
-      '@babel/preset-typescript': ^7.18.6
-      '@rollup/plugin-babel': ^5.3.1
-      '@rollup/plugin-image': ^3.0.0
-      '@rollup/plugin-typescript': ^8.5.0
-      '@vue/babel-preset-jsx': ^1.4.0
-      '@vue/compiler-sfc': ^3.2.41
-      less: ^4.1.3
-      rollup-plugin-postcss: ^3.1.4
-      rollup-plugin-vue: ^6.0.0
-      vue: ^3.2.41
-    devDependencies:
-      '@babel/preset-typescript': 7.18.6_@babel+core@7.19.1
-      '@rollup/plugin-babel': 5.3.1_@babel+core@7.19.1+rollup@2.79.1
-      '@rollup/plugin-image': 3.0.0_rollup@2.79.1
-      '@rollup/plugin-typescript': 8.5.0_rollup@2.79.1+tslib@2.4.0
-      '@vue/babel-preset-jsx': 1.4.0_@babel+core@7.19.1+vue@3.2.41
-      '@vue/compiler-sfc': 3.2.41
-      less: 4.1.3
-      rollup-plugin-postcss: 3.1.8
-      rollup-plugin-vue: 6.0.0_@vue+compiler-sfc@3.2.41
-      vue: 3.2.41
-
   packages/saas/toolkit:
     specifiers:
       '@babel/preset-typescript': ^7.18.6
