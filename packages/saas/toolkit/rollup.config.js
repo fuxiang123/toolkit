@@ -13,7 +13,7 @@ import postcss from 'rollup-plugin-postcss';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
-const extensions = ['.ts', '.vue'];
+const extensions = ['.ts', '.tsx', '.vue'];
 
 // 公共插件配置
 const plugins = [
@@ -59,5 +59,5 @@ module.exports = {
     },
   ],
   plugins,
-  external: ['vue'],
+  external: ['vue', 'ant-design-vue'],
 };
