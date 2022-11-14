@@ -1,7 +1,7 @@
 import { ref, defineComponent } from 'vue';
 import { Button, ButtonProps } from 'ant-design-vue';
 
-interface AsyncButtonProps extends Omit<ButtonProps, 'onClick'> {
+interface AsyncButtonProps extends Omit<ButtonProps, 'onClick' | 'loading'> {
   onClick?: (event: MouseEvent) => Promise<any>;
 }
 
