@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/saas-toolkit@0.1.1...@neuton/saas-toolkit@0.1.2) (2022-11-14)
+
+**Note:** Version bump only for package @neuton/saas-toolkit
+
 ## [0.1.1](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/saas-toolkit@0.1.0...@neuton/saas-toolkit@0.1.1) (2022-11-12)
 
 **Note:** Version bump only for package @neuton/saas-toolkit
