@@ -5,12 +5,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/saas-ui.umd.cjs",
-  "module": "./dist/saas-ui.js",
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
-      "import": "./dist/saas-ui.js",
-      "require": "./dist/saas-ui.umd.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
     }
   },
   "scripts": {
@@ -19,7 +19,8 @@
     "preview": "vite preview",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "docs:serve": "vitepress serve docs",
+    "prepublish": "vue-tsc && vite build"
   },
   "peerDependencies": {
     "ant-design-vue": ">=3.0.0",
