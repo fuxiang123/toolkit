@@ -24,7 +24,8 @@ export default defineConfig({
       entry: path.resolve(__dirname, 'src/components/index.ts'),
       name: '@neuton/saas-ui',
       // the proper extensions will be added
-      fileName: 'index',
+      formats: ['es', 'cjs'],
+      fileName: format => (format === 'cjs' ? `index.js` : `index.js.${format}.js`),
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
