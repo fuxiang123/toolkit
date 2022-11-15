@@ -15,11 +15,7 @@ registry=http://82.157.120.5:4873/
 
 ### 安装@neuton/saas-toolkit
 
-推荐使用[ni](https://github.com/antfu/ni#ni)安装依赖。
-
 ```
-# 使用ni
-ni @neuton/saas-toolkit
 # 使用yarn
 yarn add @neuton/saas-toolkit
 # 使用npm
@@ -28,12 +24,15 @@ npm i @neuton/saas-toolkit
 pnpm i @neuton/saas-toolkit
 ```
 
+推荐使用[ni](https://github.com/antfu/ni#ni)安装依赖。
+
+```
+# 使用ni
+ni @neuton/saas-ui
+```
+
 ## 文档地址
 
-### 组件
+### Hooks
 
-[AsyncButton: 处理异步请求的按钮组件](https://e.gitee.com/ningdongyiliao/repos/ningdongyiliao/neuton-toolkit/tree/master/packages/saas/toolkit/packages/components/async-button)
-
-### 工具
-
-[useDebounceFn: 对函数进行防抖处理](https://e.gitee.com/ningdongyiliao/repos/ningdongyiliao/neuton-toolkit/tree/master/packages/saas/toolkit/packages/tools/useDebounceFn)
+[useDebounceFn: 对函数进行防抖处理](https://e.gitee.com/ningdongyiliao/repos/ningdongyiliao/neuton-toolkit/tree/master/packages/saas/toolkit/src/hooks/useDebounceFn)
