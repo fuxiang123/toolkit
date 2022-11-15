@@ -1,0 +1,46 @@
+{
+  "name": "@neuton/saas-ui",
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/saas-ui.umd.cjs",
+  "module": "./dist/saas-ui.js",
+  "exports": {
+    ".": {
+      "import": "./dist/saas-ui.js",
+      "require": "./dist/saas-ui.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "peerDependencies": {
+    "ant-design-vue": ">=3.0.0",
+    "less": ">=3.0.0",
+    "vue": ">=3.0.0"
+  },
+  "dependencies": {
+    "vitepress-demo-editor": "^3.0.8",
+    "vue": "^3.2.41"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.2.0",
+    "@vitejs/plugin-vue-jsx": "^2.1.1",
+    "@vue/runtime-core": "^3.2.41",
+    "ant-design-vue": "^3.2.15",
+    "less": "^4.1.3",
+    "typescript": "^4.6.4",
+    "unplugin-vue-components": "^0.22.9",
+    "vite": "^3.2.3",
+    "vite-plugin-dts": "^1.7.1",
+    "vitepress": "^1.0.0-alpha.27",
+    "vue-tsc": "^1.0.9"
+  }
+}

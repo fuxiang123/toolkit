@@ -8,14 +8,14 @@ click 事件必须是一个异步函数（使用 async 语法或者返回一个 
 
 ```vue
 <template>
-  <AsyncButton @click="handleClick">这是按钮</AsyncButton>
+  <AsyncButton type="primary" :async-click="asyncFn">测试按钮</AsyncButton>
 </template>
 
 <script lang="ts">
-import { AsyncButton } from '@neuton/saas-toolkit';
+import { AsyncButton } from '@neuton/saas-ui';
 
-const handleClick = async () => {
-  const res = await api();
+const asyncFn = async () => {
+  await new Promise(resolve => setTimeout(resolve, 2000));
 };
 </script>
 ```
