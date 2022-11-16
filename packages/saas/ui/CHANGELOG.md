@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2-alpha.4](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/saas-ui@0.1.2-alpha.3...@neuton/saas-ui@0.1.2-alpha.4) (2022-11-16)
+
+### Bug Fixes
+
+- **saas-ui:** 修复 pnpm 软链接导致的 ts 类型推断 bug ([ba0781b](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/ba0781b3d0e6ec98a31e20c556029a5d7cf0d269))
+
 ## [0.1.2-alpha.3](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/saas-ui@0.1.2-alpha.2...@neuton/saas-ui@0.1.2-alpha.3) (2022-11-16)
 
 ### Bug Fixes
