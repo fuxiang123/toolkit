@@ -15,7 +15,7 @@
     "baseUrl": ".",
     "paths": {
       "ant-design-vue": ["node_modules/ant-design-vue"],
-      "@vue/runtime-core": ["node_modules/@vue/runtime-core"],
+      "vue/compiler-sfc": ["node_modules/vue/compiler-sfc"],
     }
   },
   "paths": {
