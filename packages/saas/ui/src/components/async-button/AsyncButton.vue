@@ -10,7 +10,7 @@
 import { Button, ButtonProps } from 'ant-design-vue';
 import { ref } from 'vue';
 
-interface AsyncButtonProps extends ButtonProps {
+export interface AsyncButtonProps extends ButtonProps {
   asyncClick: (event: MouseEvent) => Promise<void>;
 }
 

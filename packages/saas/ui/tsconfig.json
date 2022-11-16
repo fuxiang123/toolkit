@@ -11,12 +11,17 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "ant-design-vue": ["node_modules/ant-design-vue"],
+      "@vue/runtime-core": ["node_modules/@vue/runtime-core"],
+    }
   },
   "paths": {
     "@/*": [
       "src/*"
-    ],
+    ]
   },
   "include": [
     "src/**/*.ts",
