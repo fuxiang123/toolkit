@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // 测试页面，可以在该文件中测试组件
-import AsyncButton from './components/async-button'
+import { AsyncButton } from './components'
 import 'ant-design-vue/es/button/style/css'
 import { ref } from 'vue';
 
@@ -13,7 +13,9 @@ const asyncFn = async () => {
 </script>
 
 <template>
-  <AsyncButton type="primary" :async-click="asyncFn">{{btnText}}</AsyncButton>
+  <AsyncButton  type="primary" :async-click="asyncFn">
+    {{btnText}}
+  </AsyncButton>
 </template>
 
 <style scoped>

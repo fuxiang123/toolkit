@@ -1,1 +1,1 @@
-export { default as AsyncButton } from './async-button';
+export * from './async-button';
