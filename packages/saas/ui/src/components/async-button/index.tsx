@@ -1,4 +1,4 @@
-import { ref, defineComponent } from 'vue';
+import { ref, defineComponent, PropType } from 'vue';
 import { Button } from 'ant-design-vue';
 import { buttonProps } from 'ant-design-vue/lib/button/buttonTypes';
 
@@ -7,7 +7,7 @@ export default defineComponent({
   props: {
     ...buttonProps(),
     asyncClick: {
-      type: Function,
+      type: Function as PropType<(event: MouseEvent) => Promise<void>>,
     },
   },
   setup(props, { slots }) {
