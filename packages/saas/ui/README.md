@@ -13,7 +13,7 @@
 registry=http://82.157.120.5:4873/
 ```
 
-### 安装@neuton/saas-toolkit
+### 安装@neuton/saas-ui
 
 ```
 # 使用yarn
@@ -24,7 +24,7 @@ npm i @neuton/saas-ui
 pnpm i @neuton/saas-ui
 ```
 
-推荐使用[ni](https://github.com/antfu/ni#ni)安装依赖。
+推荐使用[ni](https://github.com/antfu/ni#ni)安装依赖,可无视项目使用的包管理器。
 
 ```
 # 使用ni
