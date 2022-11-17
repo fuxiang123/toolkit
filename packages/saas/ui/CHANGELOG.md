@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/saas-ui@0.1.3...@neuton/saas-ui@0.1.4) (2022-11-17)
+
+### Bug Fixes
+
+- **saas-ui:** 优化 ts 类型 ([e73c385](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/e73c385c0f6dd9c16bc7d614a820b8cc74ea8607))
+
 ## [0.1.3](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/saas-ui@0.1.2...@neuton/saas-ui@0.1.3) (2022-11-17)
 
 **Note:** Version bump only for package @neuton/saas-ui
