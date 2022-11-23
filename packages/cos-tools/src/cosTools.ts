@@ -17,11 +17,11 @@ const validateBussinessKey = (bussinessKey: string) => {
   // 处理传递了项目标识的情况
   if (bussinessKey.indexOf('/') > -1) {
     const [projectKey, scene] = bussinessKey.split('/');
-    return !!scenes.find(item => item.projectKey === projectKey)?.scenes?.includes(scene);
+    return !!scenes.find(item => item.project === projectKey)?.scenes?.includes(scene);
   } else {
     // 处理未传递项目标识的情况
     const scene = bussinessKey;
-    return !!scenes.find(item => item.projectKey === defaultProjectKey)?.scenes?.includes(scene);
+    return !!scenes.find(item => item.project === defaultProjectKey)?.scenes?.includes(scene);
   }
 };
 
@@ -38,7 +38,7 @@ export const generateFileKey = (bussinessKey: string, fileName: string) => {
     throw new Error('当前业务场景标识不存在，请先进行注册');
   }
 
-  const { env, defaultProjectKey } = getCosGlobalSetting();
+  const { env, defaultProjectKey, formatFileKey } = getCosGlobalSetting();
   let projectKey = defaultProjectKey;
   let scene = bussinessKey;
   if (bussinessKey.indexOf('/') !== -1) {
@@ -46,10 +46,18 @@ export const generateFileKey = (bussinessKey: string, fileName: string) => {
     projectKey = p;
     scene = s;
   }
-  const projectId = `${projectKey}-${env}`;
+  const projectKeyWithEnv = `${projectKey}-${env}`;
+  if (formatFileKey) {
+    return formatFileKey({
+      project: projectKeyWithEnv,
+      scene,
+      fileName,
+    });
+  }
+
   const date = dayjs().format('YYYY-MM-DD');
   const uuid = uuidv4();
-  return `${projectId}/${scene}/${date}/${uuid}/${fileName}`;
+  return `${projectKeyWithEnv}/${scene}/${date}/${uuid}/${fileName}`;
 };
 
 /**
@@ -82,9 +90,8 @@ export const uploadFile = async (bussinessKey: string, file: File, uploadConfig?
   return undefined;
 };
 
-export const getDownloadUrl = async (bussinessKey: string, fileKey: string) => {
-  const cosFileKey = generateFileKey(bussinessKey, fileKey);
-  const res = await getDownloadUrlApi(cosFileKey);
+export const getDownloadUrl = async (fileKey: string) => {
+  const res = await getDownloadUrlApi(fileKey);
   if (typeof res?.data === 'string') {
     return res.data;
   }
@@ -93,10 +100,10 @@ export const getDownloadUrl = async (bussinessKey: string, fileKey: string) => {
 
 /**
  *
- * @param fileKey 要删除的文件的fileKey，通过后端接口获取
+ * @param fileKey 要下载的文件的fileKey，通过后端接口获取
  */
-export const downloadFile = async (bussinessKey: string, fileKey: string) => {
-  const url = await getDownloadUrl(bussinessKey, fileKey);
+export const downloadFile = async (fileKey: string) => {
+  const url = await getDownloadUrl(fileKey);
   if (typeof url === 'string') {
     const filename = fileKey.split('/').pop();
     request.download(url, {}, { filename });

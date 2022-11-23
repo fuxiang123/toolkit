@@ -3,12 +3,12 @@ export interface CosGlobalSetting {
   env: 'test' | 'prod'; // 必传，当前项目运行环境
   // 必传，当前项目用到的所有cos业务场景
   scenes: {
-    projectKey: string; // 项目标识
+    project: string; // 项目标识
     scenes: string[]; // 业务场景标识
   }[];
   defaultProjectKey?: string; // 默认项目标识, 不传默认为scenes数组中第一个项目标识
   // 自定义文件key生成规则
-  formatFileKey?: (params: { projectId: string; scene: string; fileName: string }) => string;
+  formatFileKey?: (params: { project: string; scene: string; fileName: string }) => string;
 }
 
 /** cos全局设置 */
@@ -27,13 +27,13 @@ export const setCosGlobalSetting = (setting: CosGlobalSetting) => {
     throw new Error('清先传递scenes参数,配置所需的cos业务场景');
   }
 
-  if (!scenes?.[0]?.projectKey || !scenes?.[0]?.scenes?.length) {
+  if (!scenes?.[0]?.project || !scenes?.[0]?.scenes?.length) {
     throw new Error('请配置至少一个项目标识和业务场景标识');
   }
 
   cosGlobalSetting.scenes = scenes;
   cosGlobalSetting.env = env;
-  cosGlobalSetting.defaultProjectKey = setting.defaultProjectKey ?? scenes[0].projectKey;
+  cosGlobalSetting.defaultProjectKey = setting.defaultProjectKey ?? scenes[0].project;
   cosGlobalSetting.formatFileKey = formatFileKey;
 };
 
