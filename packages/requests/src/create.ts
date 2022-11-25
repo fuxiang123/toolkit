@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { AxiosRequestConfig } from 'axios';
 import { initRequests } from './initRequests';
-import { downLoadFile } from './utils/download';
+import { downLoadFile } from './utils/downloadFile';
 
 export const create = (initConfig?: Parameters<typeof initRequests>[0]) => {
   const requests = initRequests(initConfig);
@@ -14,19 +14,19 @@ export const create = (initConfig?: Parameters<typeof initRequests>[0]) => {
       ...config,
       params,
     });
-    if (res.data) return res.data;
+    if (res?.data) return res.data;
     return undefined;
   };
 
   const post = async (url: string, data?: AxiosRequestConfig['data'], config?: AxiosRequestConfig) => {
     const res = await requestsInstance.post(url, data, config);
-    if (res.data) return res.data;
+    if (res?.data) return res.data;
     return undefined;
   };
 
   const put = async (url: string, data?: AxiosRequestConfig['data'], config?: AxiosRequestConfig) => {
     const res = await requestsInstance.put(url, data, config);
-    if (res.data) return res.data;
+    if (res?.data) return res.data;
     return undefined;
   };
 
@@ -35,7 +35,7 @@ export const create = (initConfig?: Parameters<typeof initRequests>[0]) => {
       ...config,
       params,
     });
-    if (res.data) return res.data;
+    if (res?.data) return res.data;
     return undefined;
   };
 
@@ -46,7 +46,11 @@ export const create = (initConfig?: Parameters<typeof initRequests>[0]) => {
       params,
       responseType: 'blob',
     });
-    downLoadFile(config?.filename ?? '导出文件', res.data.blob);
+    if (res?.data?.blob) {
+      downLoadFile(config?.filename ?? '导出文件', res.data.blob);
+    } else {
+      throw new Error('下载文件失败, 未检测到返回的blob数据');
+    }
   };
 
   return {

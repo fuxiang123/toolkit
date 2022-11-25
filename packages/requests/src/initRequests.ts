@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable @typescript-eslint/no-empty-function */
-import axios, { Axios, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { Axios, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 export interface RequestsConfig {
   // 基础url前缀
