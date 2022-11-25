@@ -1,7 +1,7 @@
 {
   "name": "@neuton/requests",
   "version": "0.0.2",
-  "description": "> TODO: description",
+  "description": "> 凝动前端基础请求库, 基于 axios 封装",
   "homepage": "https://gitee.com/ningdongyiliao/neuton-toolkit/packages/request#readme",
   "license": "ISC",
   "main": "./dist/index.js",

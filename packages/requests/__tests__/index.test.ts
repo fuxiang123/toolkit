@@ -1,7 +1,7 @@
 import { create, RequestsConfig } from '../index';
 
 describe('request库测试', () => {
-  const { get, requests } = create();
+  const { requests } = create();
 
   test('测试setRequestConfig配置初始化是否设置成功', () => {
     const handleAuthError = jest.fn();

@@ -2,7 +2,14 @@
 import { AxiosRequestConfig } from 'axios';
 import { initRequests } from './initRequests';
 import { downLoadFile } from './utils/downloadFile';
-
+/*!
+ * 创建一个请求实例
+ * @param initConfig 初始化配置
+ * @returns requests 请求实例
+ * @returns request 基础请求函数，与axios.request相同
+ * @returns download 下载文件函数
+ * @returns get/post/put/del 基础请求函数
+ */
 export const create = (initConfig?: Parameters<typeof initRequests>[0]) => {
   const requests = initRequests(initConfig);
   const requestsInstance = requests.instance;
