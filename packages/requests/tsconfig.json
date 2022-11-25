@@ -1,0 +1,10 @@
+{
+  "extends": "@neuton/tsconfig",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "dist",
+    "noImplicitAny": false,
+    "removeComments": false
+  },
+  "exclude": ["__tests__"],
+}
