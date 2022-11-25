@@ -41,7 +41,13 @@ interface RequestsConfig {
 import { get, post, put, del } from '@neuton/requests';
 
 const getApi = params => get('接口路径', params);
-const postApi = params => get('接口路径', params);
+const postApi = params => post('接口路径', params);
+```
+
+推荐配合@neuton/saas-toolkit 中的 useRequest 使用，简化相关代码。
+
+```javascript
+const { data, loading } = useRequest(() => getUsername({ desc: 'good' }));
 ```
 
 为了使用方便和标准化，直接提供的 http 函数都只能处理标准化接口（即接口符合 restful 规范，并且返回的数据中，根路径包含 code、data 和 msg 字段），并直接返回 data 字段中的数据。
