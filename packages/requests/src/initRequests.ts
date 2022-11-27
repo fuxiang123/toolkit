@@ -23,21 +23,20 @@ export class Requests {
 
   requestConfig = {
     successAuthCode: [] as string[],
-    token: '',
+    handleToken: () => '',
     handleRequestHeader: headers => headers,
     handleNetworkError: (() => {}) as RequestsConfig['handleNetworkError'],
     handleAuthError: (() => {}) as RequestsConfig['handleAuthError'],
   };
 
   constructor(config?: RequestsConfig) {
-    this.instance = axios.create(config);
+    this.instance = axios.create({
+      headers: {
+        Authorization: '',
+      },
+    });
     this.setRequestConfig(config);
   }
-
-  setToken = (token: string) => {
-    if (typeof token === 'string') this.requestConfig.token = token;
-    else throw new Error('token必须是一个字符串');
-  };
 
   setBaseUrl = (baseUrl: string) => {
     if (typeof baseUrl === 'string') this.instance.defaults.baseURL = baseUrl;
@@ -46,11 +45,8 @@ export class Requests {
 
   setRequestConfig = (config?: RequestsConfig) => {
     if (config) {
-      const { baseURL, handleToken, ...rest } = config;
-
+      const { baseURL, ...rest } = config;
       if (baseURL) this.setBaseUrl(baseURL);
-      if (handleToken) this.setToken(handleToken());
-
       this.requestConfig = {
         ...this.requestConfig,
         ...rest,
@@ -62,15 +58,18 @@ export class Requests {
 export const initRequests = (initConfig?: RequestsConfig) => {
   const requests = new Requests(initConfig);
   const requestsInstance = requests.instance;
-  const { requestConfig } = requests;
-  const { handleAuthError, handleNetworkError, handleRequestHeader } = requestConfig;
-
   requestsInstance.interceptors.request.use(
     config => {
-      if (requestConfig.token && config?.headers) {
-        config.headers.Authorization = requestConfig.token;
+      const { handleToken, handleRequestHeader } = requests.requestConfig;
+      const token = handleToken();
+      config.headers = {
+        ...config.headers,
+        ...handleRequestHeader(config.headers),
+      };
+
+      if (token && config.headers) {
+        config.headers.Authorization = token;
       }
-      config.headers = handleRequestHeader(config.headers);
       return config;
     },
     error => {
@@ -81,16 +80,18 @@ export const initRequests = (initConfig?: RequestsConfig) => {
 
   requestsInstance.interceptors.response.use(
     response => {
+      const { successAuthCode, handleAuthError } = requests.requestConfig;
+
       const res = response.data;
-      if (requestConfig.successAuthCode?.length && !requestConfig.successAuthCode.includes(res.code)) {
+      if (successAuthCode?.length && !successAuthCode.includes(res.code)) {
         handleAuthError?.(res);
         console.error('接口权限信息报错', res);
-        return Promise.reject(new Error(res.msg ?? 'Error'));
+        return Promise.reject(new Error(`接口权限信息报错:${res.msg}` ?? 'Error'));
       }
       return res;
     },
     error => {
-      handleNetworkError?.(error.response?.status);
+      requests.requestConfig.handleNetworkError?.(error.response?.status);
       console.error(`接口返回报错${error}`);
       return Promise.reject(error);
     },
