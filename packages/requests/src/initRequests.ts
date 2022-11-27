@@ -15,7 +15,7 @@ export interface RequestsConfig {
   /** 后端接口状态码（response.code）与successAuthCode不同时候的情况处理 */
   handleAuthError?: (data: AxiosResponse['data']) => void;
   // 通用request处理
-  handleRqeust?: (config: AxiosRequestConfig) => AxiosRequestConfig;
+  handleRequest?: (config: AxiosRequestConfig) => AxiosRequestConfig;
   // 通用response处理
   handleResponse?: (response: AxiosResponse) => AxiosResponse;
 }
@@ -56,13 +56,13 @@ export const initRequests = (initConfig?: RequestsConfig) => {
   const requestsInstance = requests.instance;
   requestsInstance.interceptors.request.use(
     config => {
-      const { handleToken, handleRqeust } = requests.requestConfig;
+      const { handleToken, handleRequest } = requests.requestConfig;
       if (handleToken && config.headers) {
         config.headers.Authorization = handleToken() ?? '';
       }
 
-      if (handleRqeust) {
-        return handleRqeust(config);
+      if (handleRequest) {
+        return handleRequest(config);
       }
       return config;
     },
