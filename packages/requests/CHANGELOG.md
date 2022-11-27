@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.7](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/requests@0.0.6...@neuton/requests@0.0.7) (2022-11-27)
+
+### Bug Fixes
+
+- **requests:** 修复拼写测试用例与拼写错误 ([ed470ec](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/ed470ecdc18fc4d282f6754a4e75e50b036541c2))
+
 ## [0.0.6](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/requests@0.0.4...@neuton/requests@0.0.6) (2022-11-27)
 
 ### Bug Fixes
