@@ -10,24 +10,20 @@ export interface RequestsConfig {
   successAuthCode?: string[];
   /** 传递一个获取token的函数 */
   handleToken?: () => string;
-  /** 请求头处理 */
-  handleRequestHeader?: (headers: AxiosRequestConfig['headers']) => AxiosRequestConfig['headers'];
   /** http状态码非200情况处理 */
   handleNetworkError?: (httpStatus: number | undefined) => void;
   /** 后端接口状态码（response.code）与successAuthCode不同时候的情况处理 */
   handleAuthError?: (data: AxiosResponse['data']) => void;
+  // 通用request处理
+  handleRqeust?: (config: AxiosRequestConfig) => AxiosRequestConfig;
+  // 通用response处理
+  handleResponse?: (response: AxiosResponse) => AxiosResponse;
 }
 
 export class Requests {
   instance: Axios;
 
-  requestConfig = {
-    successAuthCode: [] as string[],
-    handleToken: () => '',
-    handleRequestHeader: headers => headers,
-    handleNetworkError: (() => {}) as RequestsConfig['handleNetworkError'],
-    handleAuthError: (() => {}) as RequestsConfig['handleAuthError'],
-  };
+  requestConfig: Omit<RequestsConfig, 'baseURL'> = {};
 
   constructor(config?: RequestsConfig) {
     this.instance = axios.create({
@@ -60,15 +56,13 @@ export const initRequests = (initConfig?: RequestsConfig) => {
   const requestsInstance = requests.instance;
   requestsInstance.interceptors.request.use(
     config => {
-      const { handleToken, handleRequestHeader } = requests.requestConfig;
-      const token = handleToken();
-      config.headers = {
-        ...config.headers,
-        ...handleRequestHeader(config.headers),
-      };
+      const { handleToken, handleRqeust } = requests.requestConfig;
+      if (handleToken && config.headers) {
+        config.headers.Authorization = handleToken() ?? '';
+      }
 
-      if (token && config.headers) {
-        config.headers.Authorization = token;
+      if (handleRqeust) {
+        return handleRqeust(config);
       }
       return config;
     },
@@ -80,14 +74,20 @@ export const initRequests = (initConfig?: RequestsConfig) => {
 
   requestsInstance.interceptors.response.use(
     response => {
-      const { successAuthCode, handleAuthError } = requests.requestConfig;
-
+      const { successAuthCode, handleAuthError, handleResponse } = requests.requestConfig;
       const res = response.data;
       if (successAuthCode?.length && !successAuthCode.includes(res.code)) {
-        handleAuthError?.(res);
+        if (handleAuthError) {
+          handleAuthError?.(res);
+        }
         console.error('接口权限信息报错', res);
         return Promise.reject(new Error(`接口权限信息报错:${res.msg}` ?? 'Error'));
       }
+
+      if (handleResponse) {
+        return handleResponse(response);
+      }
+
       return res;
     },
     error => {
