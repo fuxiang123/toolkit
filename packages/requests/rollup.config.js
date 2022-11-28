@@ -10,7 +10,7 @@ import typescript from '@rollup/plugin-typescript';
 const isDev = process.env.NODE_ENV !== 'production';
 
 // 公共插件配置
-const plugins = [json(), nodeResolve(), typescript(), commonjs()];
+const plugins = [json(), nodeResolve({ browser: true }), typescript(), commonjs()];
 
 // 如果不是开发环境，开启压缩
 if (!isDev) plugins.push(terser());
