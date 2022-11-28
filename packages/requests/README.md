@@ -6,11 +6,11 @@
 
 ```
 # npm
-npm install axios @neuton/requests
+npm install @neuton/requests
 # yarn
-yarn add axios @neuton/requests
+yarn add @neuton/requests
 # pnpm
-pnpm install axios @neuton/requests
+pnpm install @neuton/requests
 
 ```
 
