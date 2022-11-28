@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.9-alpha.0](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/requests@0.0.8...@neuton/requests@0.0.9-alpha.0) (2022-11-28)
+
+### Bug Fixes
+
+- **request:** 修复 axios 打包失败 ([806b64d](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/806b64db9ea2b0ca744a8e6f8a324546fd202d50))
+- **requests:** 优化打包 ([ae05f52](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/ae05f526fa838ee4133881ef56e0fa5fbc82ed5d))
+
 ## [0.0.8](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/requests@0.0.7...@neuton/requests@0.0.8) (2022-11-28)
 
 ### Bug Fixes
