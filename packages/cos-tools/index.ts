@@ -1,4 +1,2 @@
-import { getDownloadUrl, downloadFile, uploadFile } from './src/cosTools';
-import { setCosGlobalSetting } from './src/settings';
-
-export { setCosGlobalSetting, getDownloadUrl, downloadFile, uploadFile };
+export { getDownloadUrl, downloadFile, uploadFile, generateFileKey } from './src/cosTools';
+export { setCosGlobalSetting } from './src/cosSettings';

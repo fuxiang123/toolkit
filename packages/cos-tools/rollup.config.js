@@ -38,5 +38,5 @@ module.exports = {
     },
   ],
   plugins,
-  external: ['cos-nodejs-sdk-v5', 'axios'],
+  external: ['cos-js-sdk-v5', 'axios', '@neuton/requests'],
 };

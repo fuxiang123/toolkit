@@ -5,7 +5,7 @@
 ### 安装
 
 ```
-npm i @neuton/cos-tools
+npm i cos-js-sdk-v5 @neuton/requests @neuton/cos-tools
 ```
 
 ### 初始化
@@ -37,6 +37,8 @@ setCosGlobalSetting({
   defaultProjectKey?: string;
   // 自定义文件路径生成规则
   formatFileKey?: (params: { project: string; scene: string; fileName: string }) => string;
+  // 设置token，如果使用@neuton/requests作为请求库则不需要设置
+  handleToken?: () => string;
 });
 ```
 

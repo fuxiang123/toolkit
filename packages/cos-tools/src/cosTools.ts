@@ -1,10 +1,10 @@
 import dayjs from 'dayjs';
 import { v4 as uuidv4 } from 'uuid';
-import { request } from './utils/request';
 import { cosStorage } from './cosStorage';
-import { getCosGlobalSetting } from './settings';
+import { getCosGlobalSetting } from './cosSettings';
 import { transByte } from './utils/transByte';
 import { getDownloadUrl as getDownloadUrlApi } from './api';
+import { downLoadFile } from './utils/downloadFIle';
 /** 单次上传的配置 */
 interface UploadFileConfig {
   maxFileSize?: number; // 限制本次上传的文件大小， 单位为字节
@@ -104,8 +104,11 @@ export const getDownloadUrl = async (fileKey: string) => {
  */
 export const downloadFile = async (fileKey: string) => {
   const url = await getDownloadUrl(fileKey);
-  if (typeof url === 'string') {
-    const filename = fileKey.split('/').pop();
-    request.download(url, {}, { filename });
+  if (url) {
+    const res = await cosStorage.download(fileKey);
+    if (res) {
+      const filename = fileKey.split('/').pop();
+      downLoadFile(filename ?? '下载文件', res);
+    }
   }
 };

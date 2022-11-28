@@ -1,8 +1,8 @@
 import COS, { GetAuthorizationCallbackParams } from 'cos-js-sdk-v5';
 import { getCosAuthorization } from './api';
+
 /**
  * cos存储桶相关配置
- * TODO: 前端不应存储明文，换为后端验证
  */
 const cosConfig = {
   cosRegion: 'ap-guangzhou',
@@ -10,9 +10,7 @@ const cosConfig = {
   privateBucketName: 'saas-private-1258165268',
 };
 
-/** cos存储桶单例 */
-let cosInstance: COS;
-
+/** cos权限认证 */
 const getAuthorization = async (options, cosCallback) => {
   const res = await getCosAuthorization();
   if (res?.data) {
@@ -28,6 +26,10 @@ const getAuthorization = async (options, cosCallback) => {
     } as GetAuthorizationCallbackParams);
   }
 };
+
+/** cos存储桶单例 */
+let cosInstance: COS;
+
 /** 获取cos实例 */
 const getCosInstance = () => {
   if (!cosInstance) {
@@ -61,9 +63,6 @@ class CosStorage {
           Key: key /* 必须 */,
           StorageClass: 'STANDARD',
           Body: file, // 上传文件对象
-          // onProgress: function(progressData) {
-          //   resolve(JSON.stringify(progressData));
-          // }
         },
         (err, data) => {
           if (err) {
@@ -74,6 +73,23 @@ class CosStorage {
         },
       );
     }) as Promise<string>;
+  }
+
+  download(fileKey: string): Promise<string> {
+    return new Promise((resolve, reject) => {
+      this.cosInstance.getObject(
+        {
+          Bucket: cosConfig.privateBucketName,
+          Region: cosConfig.cosRegion,
+          Key: fileKey,
+          DataType: 'blob',
+        },
+        (err, data) => {
+          if (err) reject('下载失败，请重试！');
+          else resolve(data.Body);
+        },
+      );
+    });
   }
 }
 
