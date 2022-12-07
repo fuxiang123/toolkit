@@ -25,9 +25,8 @@
     "url": "https://gitee.com/ningdongyiliao/neuton-toolkit/issues"
   },
   "peerDependencies": {
-    "axios": ">=0.18.0",
     "cos-js-sdk-v5": ">=1.0.0",
-    "@neuton/requests": ">=0.0.8"
+    "@neuton/requests": ">=0.0.9"
   },
   "dependencies": {
     "@neuton/requests": "workspace:*",

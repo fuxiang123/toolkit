@@ -22,9 +22,24 @@ npm i cos-js-sdk-v5 @neuton/requests @neuton/cos-tools
 cos-tools 会对项目标识、业务标识和文件名等信息进行拼接，生成唯一的文件路径。如果需要自定义文件路径，可以配置 formatFileKey 选项
 
 ```typescript
-import { setCosGlobalSetting } from '@/lib/useCosStorage';
+import { setCosGlobalSetting } from '@neuton/cos-tools';
 
-// 设置cos全局设置
+// 配置示例
+setCosGlobalSetting({
+  // 场景标识。传入与当前项目关联的字符串
+  env: process.env.VUE_APP_Enviroment === 'prod' ? 'prod' : 'test',
+  // 配置当前项目用到的业务场景标识
+  scenes: [
+    {
+      project: 'saas-doctor', // 项目标识。用来标识资源所属的项目
+      scenes: ['user-info'], // 场景标识。用来标识资源所属的业务场景
+    },
+  ],
+  // 设置token，如果项目中使用@neuton/requests作为请求库则不需要设置
+  handleToken: () => localStorage.getItem('Authorization') ?? '',
+});
+
+// 完整配置项
 setCosGlobalSetting({
   // 场景标识。传入与当前项目关联的字符串
   env: 'prod' | 'test', // 生产环境传入'prod', 测试环境传入'test',
@@ -47,7 +62,7 @@ setCosGlobalSetting({
 使用示例
 
 ```javascript
-import { uploadFile } from '@neuton/cos-handler';
+import { uploadFile } from '@neuton/cos-tools';
 
 const fileKey = uploadFile('scene1', file); // 使用默认项目id下的场景
 const fileKey = uploadFile('project2/scene1', file); // 使用其他项目id下的场景
@@ -74,7 +89,7 @@ const uploadFile: (bussinessKey: string, file: File, uploadConfig?: UploadFileCo
 使用示例
 
 ```javascript
-import { downloadFile } from '@neuton/cos-handler';
+import { downloadFile } from '@neuton/cos-tools';
 
 downloadFile(filekey); // 使用默认项目id下的场景
 downloadFile(filekey); // 使用其他项目id下的场景
@@ -89,7 +104,7 @@ export declare const downloadFile: (fileKey: string) => Promise<void>;
 ### 获取文件链接
 
 ```javascript
-import { getDownloadUrl } from '@neuton/cos-handler';
+import { getDownloadUrl } from '@neuton/cos-tools';
 
 getDownloadUrl(filekey); // 使用默认项目id下的场景
 getDownloadUrl(filekey); // 使用其他项目id下的场景

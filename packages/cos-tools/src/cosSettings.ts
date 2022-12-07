@@ -22,10 +22,6 @@ const cosGlobalSetting: CosGlobalSetting = {
   scenes: [],
 };
 
-const getBaseUrl = () => {
-  return cosGlobalSetting.env === 'test' ? 'https://saas-api.vansunscience.com' : 'https://saas-api.neutonhealth.com';
-};
-
 /** 设置cos全局配置 */
 export const setCosGlobalSetting = (setting: CosGlobalSetting) => {
   const { scenes, env, formatFileKey } = setting;

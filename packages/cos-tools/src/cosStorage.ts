@@ -5,6 +5,8 @@ import { getCosAuthorization } from './api';
  * cos存储桶相关配置
  */
 const cosConfig = {
+  secretId: 'AKIDymMhndIitpVw73jAMIyPbXEgspWx96oG',
+  secretKey: 'GG1WljcHhtqXzB8pHUSAcpnX2KPFrFPK',
   cosRegion: 'ap-guangzhou',
   publicBucketName: 'saas-1258165268',
   privateBucketName: 'saas-private-1258165268',
@@ -34,8 +36,8 @@ let cosInstance: COS;
 const getCosInstance = () => {
   if (!cosInstance) {
     cosInstance = new COS({
-      getAuthorization,
-      UploadCheckContentMd5: true,
+      SecretId: cosConfig.secretId,
+      SecretKey: cosConfig.secretKey,
     });
     return cosInstance;
   }
@@ -53,26 +55,16 @@ class CosStorage {
     this.cosConfig = cosConfig;
   }
 
-  uploadFile(file: File, key: string, config?: COS.PutObjectParams) {
-    return new Promise((resolve, reject) => {
-      this.cosInstance.putObject(
-        {
-          ...config,
-          Bucket: this.cosConfig.privateBucketName /* 必须 */,
-          Region: this.cosConfig.cosRegion /* 存储桶所在地域，必须字段 */,
-          Key: key /* 必须 */,
-          StorageClass: 'STANDARD',
-          Body: file, // 上传文件对象
-        },
-        (err, data) => {
-          if (err) {
-            reject('上传失败');
-          } else if (data.statusCode === 200) {
-            resolve('上传成功');
-          }
-        },
-      );
-    }) as Promise<string>;
+  async uploadFile(file: File, key: string, config?: COS.PutObjectParams) {
+    const res = await this.cosInstance.putObject({
+      ...config,
+      Bucket: this.cosConfig.privateBucketName /* 必须 */,
+      Region: this.cosConfig.cosRegion /* 存储桶所在地域，必须字段 */,
+      Key: key /* 必须 */,
+      StorageClass: 'STANDARD',
+      Body: file, // 上传文件对象
+    });
+    return res;
   }
 
   download(fileKey: string): Promise<string> {
