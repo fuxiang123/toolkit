@@ -1,6 +1,6 @@
 {
   "name": "@neuton/cos-tools",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "> TODO: description",
   "homepage": "https://gitee.com/ningdongyiliao/neuton-toolkit/packages/cos-tools#readme",
   "license": "ISC",
@@ -25,8 +25,8 @@
     "url": "https://gitee.com/ningdongyiliao/neuton-toolkit/issues"
   },
   "peerDependencies": {
-    "cos-js-sdk-v5": ">=1.0.0",
-    "@neuton/requests": ">=0.0.9"
+    "@neuton/requests": ">=0.0.9",
+    "cos-js-sdk-v5": ">=1.0.0"
   },
   "dependencies": {
     "@neuton/requests": "workspace:*",

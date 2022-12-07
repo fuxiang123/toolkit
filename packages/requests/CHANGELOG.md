@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.9](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/requests@0.0.9-alpha.0...@neuton/requests@0.0.9) (2022-12-07)
+
+**Note:** Version bump only for package @neuton/requests
+
 ## [0.0.9-alpha.0](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/requests@0.0.8...@neuton/requests@0.0.9-alpha.0) (2022-11-28)
 
 ### Bug Fixes
