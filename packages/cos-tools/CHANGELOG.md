@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.3](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/cos-tools@0.0.2...@neuton/cos-tools@0.0.3) (2022-12-08)
+
+### Bug Fixes
+
+- **cos:** 修复依赖 ([3aab5f3](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/3aab5f340b3b14267834ba95f51a2a706e4d2be5))
+
 ## 0.0.2 (2022-12-07)
 
 ### Bug Fixes
