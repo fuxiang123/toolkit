@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/hs-auth-tools@2.2.8...@neuton/hs-auth-tools@2.3.0) (2022-12-14)
+
+### Bug Fixes
+
+- **放开微信拦截:** 放开微信拦截 ([e48fc73](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/e48fc731329d305c3d1284ca99bfb1ee211d70d7))
+
+### Features
+
+- **hs:** 放开微信拦截 ([7d1ff66](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/7d1ff6678dd95c5bb39320393c5ae4d326c77c70))
+
 ## [2.2.8](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/hs-auth-tools@2.2.8-alpha.6...@neuton/hs-auth-tools@2.2.8) (2022-10-20)
 
 ### Bug Fixes
