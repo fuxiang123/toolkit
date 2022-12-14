@@ -1,7 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "module": "ES6",
+    "paths": {
+      "axios": ["node_modules/axios"],
+    }
   },
-  "include": ["index.ts", "src/**/*.ts", "node_module/*/d.ts"],
+  "include": ["index.ts", "src/**/*.ts"],
 }
