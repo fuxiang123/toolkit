@@ -6,7 +6,6 @@
   <!-- 页面正文 -->
   <slot v-else-if="hasAuth"></slot>
   <!-- authMode为wechat且无权限时显示的页面 -->
-  <Remind v-else-if="isWechatMode" />
 </template>
 
 <script lang="ts" setup>
