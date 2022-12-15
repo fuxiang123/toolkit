@@ -1,6 +1,11 @@
 // 是否是微信客户端
 export function getIsWxClient() {
-  return true;
+  const ua = navigator.userAgent.toLowerCase();
+  const matchArr = ua.match(/MicroMessenger/i);
+  if (matchArr && matchArr.length > 0 && matchArr[0] === 'micromessenger') {
+    return true;
+  }
+  return false;
 }
 
 // 获取url中的参数
