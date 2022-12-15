@@ -10,7 +10,6 @@ importers:
       '@commitlint/config-angular': ^17.0.3
       '@commitlint/config-conventional': ^17.1.0
       '@commitlint/cz-commitlint': ^17.0.3
-      '@neuton/commit-check': workspace:*
       '@neuton/eslint-config': workspace:*
       '@neuton/tsconfig': workspace:*
       '@rollup/plugin-babel': ^5.3.1
@@ -48,7 +47,6 @@ importers:
       '@commitlint/config-angular': 17.1.0
       '@commitlint/config-conventional': 17.1.0
       '@commitlint/cz-commitlint': 17.1.2_commitizen@4.2.5+inquirer@8.2.4
-      '@neuton/commit-check': link:packages/commit-check
       '@neuton/eslint-config': link:packages/lint/eslint-config
       '@neuton/tsconfig': link:packages/ts/tsconfig
       '@rollup/plugin-babel': 5.3.1_@babel+core@7.19.1+rollup@2.79.1
