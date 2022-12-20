@@ -58,10 +58,16 @@ const getApi = params => get('接口路径', params);
 const postApi = params => post('接口路径', params);
 ```
 
-推荐配合@neuton/saas-toolkit 中的 useRequest 使用，简化相关代码。
+推荐搭配 [vue-hooks-plus](https://inhiblab-core.gitee.io/docs/hooks/guide/) 中的 [useRequest](https://inhiblab-core.gitee.io/docs/hooks/useRequest/) 使用，简化相关代码。
+
+```
+$ npm install --save vue-hooks-plus
+# or
+$ yarn add vue-hooks-plus
+```
 
 ```javascript
-const { data, loading } = useRequest(() => getUsername({ desc: 'good' }));
+const { data, error, loading } = useRequest(() => getUsername({ desc: 'good' }));
 ```
 
 为了使用方便和标准化，直接提供的 http 函数都只能处理标准化接口（即接口符合 restful 规范，并且返回的数据中，根路径包含 code、data 和 msg 字段），并直接返回 data 字段中的数据。
@@ -102,5 +108,18 @@ import { create } from '@neuton/requests';
 const { request, get, post, put, del, download } = create({
   // 传入配置
   baseURL: 'xxx',
+});
+```
+
+## 获取 axios 示例
+
+在某些复杂场景，如果@neuton/request 的默认配置不能满足您的要求，您可以通过`requests.instance`获取 axios 示例，来自定义如拦截器等功能。
+
+```javascript
+import { requests } from '@neuton/requests';
+
+requests.instance.interceptors.request.use(config => {
+  console.log('config', config);
+  return config;
 });
 ```
