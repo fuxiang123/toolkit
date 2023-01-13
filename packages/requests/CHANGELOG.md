@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/requests@0.1.3...@neuton/requests@0.1.4) (2023-01-13)
+
+### Bug Fixes
+
+- **requests:** 修复构建报错 ([7f12246](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/7f122466004f4485022f2d61ffe6a64e7b096f1e))
+
 ## [0.1.3](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/requests@0.1.2...@neuton/requests@0.1.3) (2023-01-13)
 
 ### Bug Fixes
