@@ -88,15 +88,6 @@ const getApi = params =>
   })
 ```
 
-同时还针对下载场景提供了 download 函数。
-
-```javascript
-download(url, params, {
-  filename: `文件名`,
-  method: 'get',
-});
-```
-
 ## 多业务场景处理
 
 某些项目可能有多个业务场景，后端也提供了多套不同的 api，这时候可以使用 create 函数创建一个新的 requests 实例。

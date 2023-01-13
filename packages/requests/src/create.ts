@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { AxiosRequestConfig } from 'axios';
 import { initRequests } from './initRequests';
-import { downLoadFile } from './utils/downloadFile';
+
 /*!
  * 创建一个请求实例
  * @param initConfig 初始化配置
@@ -46,20 +46,6 @@ export const create = (initConfig?: Parameters<typeof initRequests>[0]) => {
     return undefined;
   };
 
-  const download = async (url: string, params?: AxiosRequestConfig['params'], config?: AxiosRequestConfig & { filename?: string }) => {
-    const res = await request({
-      ...config,
-      url,
-      params,
-      responseType: 'blob',
-    });
-    if (res?.data?.blob) {
-      downLoadFile(config?.filename ?? '导出文件', res.data.blob);
-    } else {
-      throw new Error('下载文件失败, 未检测到返回的blob数据');
-    }
-  };
-
   return {
     requests,
     request,
@@ -67,7 +53,6 @@ export const create = (initConfig?: Parameters<typeof initRequests>[0]) => {
     post,
     put,
     del,
-    download,
   };
 };
 
