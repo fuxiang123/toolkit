@@ -1,0 +1,35 @@
+{
+  "name": "@neuton/cloud-storage",
+  "version": "0.0.1",
+  "description": "> TODO: description",
+  "homepage": "https://gitee.com/ningdongyiliao/neuton-toolkit/packages/cloud-storage#readme",
+  "license": "ISC",
+  "main": "./index.ts",
+  "#main": "./dist/index.js",
+  "#module": "./dist/index.esm.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "http://82.157.120.5:4873/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/ningdongyiliao/neuton-toolkit.git"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "prepublish": "npm run build",
+    "test": "node ./__tests__/test.test.js"
+  },
+  "bugs": {
+    "url": "https://gitee.com/ningdongyiliao/neuton-toolkit/issues"
+  },
+  "peerDependencies": {
+    "@neuton/requests": ">=0.1.2"
+  },
+  "dependencies": {
+    "@neuton/requests": "workspace:*",
+    "uuid": "^9.0.0"
+  }
+}
