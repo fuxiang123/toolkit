@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/requests@0.1.2...@neuton/requests@0.1.3) (2023-01-13)
+
+### Bug Fixes
+
+- **requests:** 去掉下载函数 ([7c8f73d](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/7c8f73d579277955688d9a622e07be36b122de69))
+
 ## [0.1.2](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/requests@0.1.0...@neuton/requests@0.1.2) (2023-01-13)
 
 ### Bug Fixes
