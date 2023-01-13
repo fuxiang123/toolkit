@@ -4,5 +4,6 @@
     "declaration": true,
     "declarationDir": "dist",
     "noImplicitAny": false,
-  }
+  },
+  "exclude": ["./dist/**/*"]
 }

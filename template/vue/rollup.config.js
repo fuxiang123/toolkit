@@ -12,8 +12,6 @@ import babel from '@rollup/plugin-babel';
 import postcss from 'rollup-plugin-postcss';
 import del from 'rollup-plugin-delete';
 
-const isDev = process.env.NODE_ENV !== 'production';
-
 const extensions = ['.ts', '.vue'];
 
 // 公共插件配置
@@ -33,10 +31,8 @@ const plugins = [
     presets: ['@babel/preset-typescript', '@vue/babel-preset-jsx'],
   }), // babelHelpers是bable的最佳实践方案 extensions编译的扩展文件
   del({ targets: 'dist/*' }),
+  terser(),
 ];
-
-// 如果不是开发环境，开启压缩
-if (!isDev) plugins.push(terser());
 
 // packages 文件夹路径
 const root = __dirname;

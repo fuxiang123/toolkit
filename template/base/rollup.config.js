@@ -8,13 +8,8 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import del from 'rollup-plugin-delete';
 
-const isDev = process.env.NODE_ENV !== 'production';
-
 // 公共插件配置
-const plugins = [json(), nodeResolve(), typescript(), commonjs(), del({ targets: 'dist/*' })];
-
-// 如果不是开发环境，开启压缩
-if (!isDev) plugins.push(terser());
+const plugins = [json(), nodeResolve(), typescript(), commonjs(), del({ targets: 'dist/*' }), terser()];
 
 // packages 文件夹路径
 const root = __dirname;
