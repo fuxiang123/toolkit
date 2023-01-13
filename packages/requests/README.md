@@ -23,6 +23,7 @@ import { setRequestConfig } from '@neuton/requests';
 setRequestConfig({
   baseURL: 'xxx', // 配置基础请求url前缀
   handleToken: () => 'token', // 获取token的回调函数，需要一个返回字符串的函数
+  successAuthCode: ['00000'],
 });
 ```
 
@@ -32,7 +33,7 @@ setRequestConfig({
 interface RequestsConfig {
   // 基础url前缀
   baseURL?: string;
-  // 后端接口表示请求成功时候的权限码，默认00000
+  // 后端接口表示请求成功时候的权限码，如果接口没有返回对应权限码则表示请求出错
   successAuthCode?: string[];
   // 传递一个获取token的函数
   handleToken?: () => string;

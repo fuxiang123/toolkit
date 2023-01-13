@@ -1,8 +1,6 @@
 import { create } from './create';
 
-const { requests, request, get, post, put, del, download } = create({
-  successAuthCode: ['00000'],
-});
+const { requests, request, get, post, put, del, download } = create();
 
 const setRequestConfig = requests.setRequestConfig.bind(requests);
 
