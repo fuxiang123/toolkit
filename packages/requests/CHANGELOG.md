@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/requests@0.0.10...@neuton/requests@0.1.0) (2023-01-13)
+
+### Features
+
+- **axios:** 导出 axios ([5337d02](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/5337d02095f27bfda16ce4833f5d93081dad538c))
+
 ## [0.0.10](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/requests@0.0.9...@neuton/requests@0.0.10) (2022-12-20)
 
 **Note:** Version bump only for package @neuton/requests
