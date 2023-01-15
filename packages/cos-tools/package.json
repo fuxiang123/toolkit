@@ -2,6 +2,7 @@
   "name": "@neuton/cos-tools",
   "version": "0.1.3",
   "description": "> TODO: description",
+  "private": "true",
   "homepage": "https://gitee.com/ningdongyiliao/neuton-toolkit/packages/cos-tools#readme",
   "license": "ISC",
   "main": "./dist/index.js",
@@ -9,9 +10,6 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "registry": "http://82.157.120.5:4873/"
-  },
   "repository": {
     "type": "git",
     "url": "https://gitee.com/ningdongyiliao/neuton-toolkit.git"

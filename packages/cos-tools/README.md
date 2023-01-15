@@ -1,4 +1,4 @@
-# `@neuton/cos-tools`
+# `@neuton/cos-tools(已废弃)`
 
 > cos 上传工具库。可对 cos 存储桶上的资源进行上传、下载、获取链接等操作。
 
