@@ -23,7 +23,7 @@ import { setRequestConfig } from '@neuton/requests';
 setRequestConfig({
   baseURL: 'xxx', // 配置基础请求url前缀
   handleToken: () => 'token', // 获取token的回调函数，需要一个返回字符串的函数
-  successAuthCode: ['00000'],
+  successAuthCode: ['00000'], // 接口权限码。如果接口不包含该权限码会抛出错误
 });
 ```
 
@@ -61,19 +61,16 @@ const postApi = params => post('接口路径', params);
 
 推荐搭配 [vue-hooks-plus](https://inhiblab-core.gitee.io/docs/hooks/guide/) 中的 [useRequest](https://inhiblab-core.gitee.io/docs/hooks/useRequest/) 使用，简化相关代码。
 
-```
-$ npm install --save vue-hooks-plus
-# or
-$ yarn add vue-hooks-plus
-```
-
 ```javascript
+import { useRequest } from 'vue-hooks-plus';
+const getUsername = params => get('/接口路径', params);
+
 const { data, error, loading } = useRequest(() => getUsername({ desc: 'good' }));
 ```
 
-为了使用方便和标准化，直接提供的 http 函数都只能处理标准化接口（即接口符合 restful 规范，并且返回的数据中，根路径包含 code、data 和 msg 字段），并直接返回 data 字段中的数据。
+为了使用方便和标准化，直接提供的 get/post 等函数都只能处理标准化接口（即接口符合 restful 规范，并且返回的数据中，根路径包含 code、data 和 msg 字段），且会直接返回 data 字段中的数据。
 
-如果遇到非标准化的接口，可以使用 request 函数进行处理。
+如果遇到非标准化的接口(如接口返回的根路径中不包含 data 字段)，可以使用 request 函数进行处理。
 
 ```javascript
 import { request } from '@neuton/requests';
@@ -97,13 +94,13 @@ const getApi = params =>
 ```javascript
 import { create } from '@neuton/requests';
 
-const { request, get, post, put, del, download } = create({
+const { request, get, post, put, del } = create({
   // 传入配置
   baseURL: 'xxx',
 });
 ```
 
-## 获取 axios 示例
+## 获取 axios 实例
 
 在某些复杂场景，如果@neuton/request 的默认配置不能满足您的要求，您可以通过`requests.instance`获取 axios 示例，来自定义如拦截器等功能。
 
@@ -114,4 +111,12 @@ requests.instance.interceptors.request.use(config => {
   console.log('config', config);
   return config;
 });
+```
+
+## 获取原本的 axios（不推荐）
+
+如果确实存在本工具库无法覆盖的场景（如获取 CancelToken 等），你也可以通过以下方式获取原本的 axios。
+
+```javascript
+import { axios } from '@neuton/requests';
 ```
