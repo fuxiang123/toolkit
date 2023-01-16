@@ -1,8 +1,8 @@
-import { AxiosProgressEvent, CancelTokenSource, request, axios } from '@neuton/requests';
+import { AxiosProgressEvent, request, axios } from '@neuton/requests';
 import { transByte } from './utils/transByte';
-import { getDownloadUrl as getDownloadUrlApi } from './api';
+import { getDownloadUrl as getDownloadUrlApi, getUploadUrl } from './api';
 import { generateFileKey } from './generateFileKey';
-import { uploadFileWithKey } from './utils/uploadFileWithKey';
+import { uploadFileToStorage } from './utils/uploadFileToStorage';
 import { downloadFileToLocal } from './utils/downloadFileToLocal';
 
 /** 单次上传的配置 */
@@ -10,30 +10,25 @@ export interface UploadFileConfig {
   maxFileSize?: number; // 限制本次上传的文件大小， 单位为字节
   fileName?: string; // 为本次上传的文件重新命名
   onUploadProgress?: (e: AxiosProgressEvent) => void; // 上传进度回调，同axios的onUploadProgress
-  cancelTokenCallback?: (source: CancelTokenSource) => void; // 取消上传回调，同axios的CancelToken.source,通过source.cancel()取消上传
+  cancelTokenCallback?: (cancel: () => void) => void; // 取消上传回调，通过调用cancel()取消上传
+  formatFileKey: (projectKey: string, fileName: string) => string; // 自定义文件key生成规则
 }
 
 export interface DownloadFileConfig {
   fileName?: string; // 为本次下载的文件重新命名
   onDownloadProgress?: (e: AxiosProgressEvent) => void; // 下载进度回调，同axios的onDownloadProgress
-  cancelTokenCallback?: (source: CancelTokenSource) => void; // 取消下载回调，同axios的CancelToken.source,通过source.cancel()取消下载
+  cancelTokenCallback?: (cancel: () => void) => void; // 取消上传回调，通过调用cancel()取消上传
 }
 
 /**
- * 上传文件到cos
+ * 上传文件
  * @param file 上传的文件
  * @param bussinessKey 业务场景标识, 例如:doctor-profile 或 saas/doctor-profile
  * @param uploadConfig.maxFileSize 限制本次上传的文件大小， 单位为字节
  * @param uploadConfig.fileName 为本次上传的文件重新命名
  * @return {Promise<String | undefined>} 返回上传成功的文件key。失败返回undefined
  */
-export const uploadFile = async (bussinessKey: string, file: File, uploadConfig?: UploadFileConfig) => {
-  if (typeof bussinessKey !== 'string') {
-    throw new TypeError('bussinessKey 必须是一个字符串');
-  }
-  if (!bussinessKey) {
-    throw new Error('请先设置config.bussinessKey');
-  }
+export const uploadFile = async (file: File, uploadConfig?: UploadFileConfig) => {
   // 判断文件大小是否超过限制
   const fileSize = uploadConfig?.maxFileSize;
   if (file.size && fileSize) {
@@ -44,13 +39,16 @@ export const uploadFile = async (bussinessKey: string, file: File, uploadConfig?
   }
 
   const fileName = uploadConfig?.fileName ?? file.name;
-  // 根据文件名和业务场景生成fileKey
-  const fileKey = generateFileKey(bussinessKey, fileName);
-  const uploadRes = await uploadFileWithKey(fileKey, file, uploadConfig?.onUploadProgress, uploadConfig?.cancelTokenCallback);
+  // 生成文件Key
+  const fileKey = generateFileKey(fileName, uploadConfig?.formatFileKey);
+  // 获取上传预签名链接
+  const presignedURL = await getUploadUrl(fileKey);
+  // 上传文件
+  const uploadRes = await uploadFileToStorage(presignedURL, file, uploadConfig?.onUploadProgress, uploadConfig?.cancelTokenCallback);
   return uploadRes ? fileKey : undefined;
 };
 
-export const getDownloadUrl = async (fileKey: string) => {
+export const getFileUrl = async (fileKey: string) => {
   const res = await getDownloadUrlApi(fileKey);
   if (typeof res === 'string') {
     return res;
@@ -63,7 +61,7 @@ export const getDownloadUrl = async (fileKey: string) => {
  * @param fileKey 要下载的文件的fileKey，通过后端接口获取
  */
 export const downloadFile = async (fileKey: string, downloadConfig: DownloadFileConfig) => {
-  const downloadUrl = await getDownloadUrl(fileKey);
+  const downloadUrl = await getFileUrl(fileKey);
   if (downloadUrl) {
     const filename = downloadConfig?.fileName ?? fileKey.split('/').pop() ?? '下载文件';
 
@@ -71,7 +69,7 @@ export const downloadFile = async (fileKey: string, downloadConfig: DownloadFile
     const { CancelToken } = axios;
     const source = CancelToken.source();
     if (downloadConfig.cancelTokenCallback) {
-      downloadConfig.cancelTokenCallback(source);
+      downloadConfig.cancelTokenCallback(source.cancel);
     }
 
     request({

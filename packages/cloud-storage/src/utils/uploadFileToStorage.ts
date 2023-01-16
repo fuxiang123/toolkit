@@ -1,25 +1,20 @@
-import { put, axios, AxiosProgressEvent, CancelTokenSource } from '@neuton/requests';
-import { getUploadUrl } from '../api';
+import { put, axios, AxiosProgressEvent } from '@neuton/requests';
 
 /**
  * 通过文件key上传文件
- * @param key 文件key
+ * @param presignedURL 预签名链接
  * @param file 文件
  * @param onUploadProgress 上传进度回调，同axios的onUploadProgress
- * @param cancelTokenCallback (source: CancelTokenSource) => void 取消上传回调，同axios的CancelToken.source,通过source.cancel()取消上传
- * @returns key 文件key
+ * @param cancelTokenCallback 取消上传回调，同axios的CancelToken.source,通过调用cancel()取消上传
+ * @returns boolean | undefined 上传成功返回true，取消上传返回undefined
  */
-export async function uploadFileWithKey(
-  key: string,
+export async function uploadFileToStorage(
+  presignedURL: string,
   file: File | Blob,
   onUploadProgress?: (e: AxiosProgressEvent) => void,
-  cancelTokenCallback?: (source: CancelTokenSource) => void,
+  cancelTokenCallback?: (cancel: () => void) => void,
 ) {
   try {
-    if (!key || !file) {
-      throw new Error('uploadFileWithKey params: key or file is invalid');
-    }
-
     if (onUploadProgress && typeof onUploadProgress !== 'function') {
       throw new TypeError('progressCallback must be a function.');
     }
@@ -28,16 +23,16 @@ export async function uploadFileWithKey(
       throw new TypeError('cancelTokenCallback must be a function');
     }
 
-    const presignedURL = await getUploadUrl(key);
-
+    // 处理axios取消请求功能
     const { CancelToken } = axios;
     const source = CancelToken.source();
     if (cancelTokenCallback) {
-      cancelTokenCallback(source);
+      cancelTokenCallback(source.cancel);
     }
 
     await put(presignedURL, file, {
       headers: { 'Content-Type': file.type },
+      // axios上传进度回调
       onUploadProgress: event => {
         if (onUploadProgress) {
           onUploadProgress(event);
@@ -45,7 +40,8 @@ export async function uploadFileWithKey(
       },
       cancelToken: source.token,
     });
-    return key;
+
+    return true;
   } catch (error) {
     if (!axios.isCancel(error)) {
       throw error;

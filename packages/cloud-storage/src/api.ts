@@ -1,4 +1,4 @@
-import { get, put, AxiosProgressEvent } from '@neuton/requests';
+import { get } from '@neuton/requests';
 import { getStorageGlobalSetting } from './storageSettings';
 
 const getBaseUrl = () => {
