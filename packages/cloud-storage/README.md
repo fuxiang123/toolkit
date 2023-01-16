@@ -108,4 +108,4 @@ export declare const getFileUrl: (fileKey: string) => Promise<string>;
 
 ### 删除
 
-删除功能不直接通过前端进行。将文件 key 传递给后端删除接口，再由后端进行删除。
+为安全起见，删除功能不直接通过前端进行。可将文件 key 传递给项目对应后端开发，由后端自行进行相关操作。
