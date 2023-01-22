@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/cloud-storage@0.2.1...@neuton/cloud-storage@0.2.2) (2023-01-22)
+
+### Bug Fixes
+
+- **cloud-storage:** 修复 npm 包入口 ([c752bcb](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/c752bcb710b7d39e6b519cef608eae7c5934833b))
+
 ## [0.2.1](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/cloud-storage@0.2.0...@neuton/cloud-storage@0.2.1) (2023-01-22)
 
 **Note:** Version bump only for package @neuton/cloud-storage
