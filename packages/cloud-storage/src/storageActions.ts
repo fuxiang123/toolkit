@@ -11,7 +11,7 @@ export interface UploadFileConfig {
   fileName?: string; // 为本次上传的文件重新命名
   onUploadProgress?: (e: AxiosProgressEvent) => void; // 上传进度回调，同axios的onUploadProgress
   cancelTokenCallback?: (cancel: () => void) => void; // 取消上传回调，通过调用cancel()取消上传
-  formatFileKey: (projectKey: string, fileName: string) => string; // 自定义文件key生成规则
+  formatFileKey?: (projectKey: string, fileName: string) => string; // 自定义文件key生成规则
 }
 
 export interface DownloadFileConfig {
