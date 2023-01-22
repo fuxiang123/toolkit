@@ -60,7 +60,7 @@ export const getFileUrl = async (fileKey: string) => {
  *
  * @param fileKey 要下载的文件的fileKey，通过后端接口获取
  */
-export const downloadFile = async (fileKey: string, downloadConfig: DownloadFileConfig) => {
+export const downloadFile = async (fileKey: string, downloadConfig?: DownloadFileConfig) => {
   const downloadUrl = await getFileUrl(fileKey);
   if (downloadUrl) {
     const filename = downloadConfig?.fileName ?? fileKey.split('/').pop() ?? '下载文件';
@@ -68,7 +68,7 @@ export const downloadFile = async (fileKey: string, downloadConfig: DownloadFile
     // 取消下载功能
     const { CancelToken } = axios;
     const source = CancelToken.source();
-    if (downloadConfig.cancelTokenCallback) {
+    if (downloadConfig?.cancelTokenCallback) {
       downloadConfig.cancelTokenCallback(source.cancel);
     }
 
