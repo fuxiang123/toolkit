@@ -4,9 +4,8 @@
   "description": "> TODO: description",
   "homepage": "https://gitee.com/ningdongyiliao/neuton-toolkit/packages/cloud-storage#readme",
   "license": "ISC",
-  "main": "./index.ts",
-  "#main": "./dist/index.js",
-  "#module": "./dist/index.esm.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
   "files": [
     "dist"
   ],
