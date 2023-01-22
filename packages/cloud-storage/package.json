@@ -26,10 +26,12 @@
     "url": "https://gitee.com/ningdongyiliao/neuton-toolkit/issues"
   },
   "peerDependencies": {
-    "@neuton/requests": ">=1.0.0"
+    "@neuton/requests": ">=0.1.5"
   },
   "dependencies": {
-    "@neuton/requests": "workspace:*",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@neuton/requests": "^0.1.5"
   }
 }
