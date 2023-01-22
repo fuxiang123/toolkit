@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/cloud-storage@0.2.3...@neuton/cloud-storage@0.2.4) (2023-01-22)
+
+### Bug Fixes
+
+- **cloud-storage:** 修复类型错误 ([1859af6](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/1859af62a967842b22fc45ba83564190b3a81dc9))
+
 ## [0.2.3](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/cloud-storage@0.2.2...@neuton/cloud-storage@0.2.3) (2023-01-22)
 
 ### Bug Fixes
