@@ -70,7 +70,15 @@ const { data, error, loading } = useRequest(() => getUsername({ desc: 'good' }))
 
 为了使用方便和标准化，直接提供的 get/post 等函数都只能处理标准化接口（即接口符合 restful 规范，并且返回的数据中，根路径包含 code、data 和 msg 字段），且会直接返回 data 字段中的数据。
 
-如果遇到非标准化的接口(如接口返回的根路径中不包含 data 字段)，可以使用 request 函数进行处理。
+如果遇到非标准化的接口(如接口返回的根路径中不包含 data 字段)，可以使用 returnReponse 参数，加了该参数后会返回完整的 response。
+
+```javascript
+import { get, post, put, del } from '@neuton/requests';
+
+const getApi = params => get('接口路径', params, { returnResponse: true });
+```
+
+也可以使用 request 函数进行处理。
 
 ```javascript
 import { request } from '@neuton/requests';

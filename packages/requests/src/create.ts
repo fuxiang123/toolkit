@@ -1,6 +1,9 @@
-/* eslint-disable no-param-reassign */
 import { AxiosRequestConfig } from 'axios';
 import { initRequests } from './initRequests';
+
+export interface RequestConfig extends AxiosRequestConfig {
+  returnResponse?: boolean; // 是否返回完整response
+}
 
 /*!
  * 创建一个请求实例
@@ -16,35 +19,29 @@ export const create = (initConfig?: Parameters<typeof initRequests>[0]) => {
 
   const { request } = requestsInstance;
 
-  const get = async (url: string, params?: AxiosRequestConfig['params'], config?: AxiosRequestConfig) => {
-    const res = await requests.instance.get(url, {
+  const methodCreator = (method: 'get' | 'post' | 'put' | 'delete') => async (url: string, params?: any, config?: RequestConfig) => {
+    const requestConfig: AxiosRequestConfig = {
+      url,
+      method,
       ...config,
-      params,
-    });
-    if (res?.data) return res.data;
+    };
+
+    if (method === 'get' || method === 'delete') {
+      requestConfig.params = params;
+    } else if (method === 'post' || method === 'put') {
+      requestConfig.data = params;
+    }
+
+    const res = await request(requestConfig);
+    if (config?.returnResponse) return res;
+    else if (res?.data) return res.data;
     return undefined;
   };
 
-  const post = async (url: string, data?: AxiosRequestConfig['data'], config?: AxiosRequestConfig) => {
-    const res = await requestsInstance.post(url, data, config);
-    if (res?.data) return res.data;
-    return undefined;
-  };
-
-  const put = async (url: string, data?: AxiosRequestConfig['data'], config?: AxiosRequestConfig) => {
-    const res = await requestsInstance.put(url, data, config);
-    if (res?.data) return res.data;
-    return undefined;
-  };
-
-  const del = async (url: string, params?: AxiosRequestConfig['params'], config?: AxiosRequestConfig) => {
-    const res = await requestsInstance.delete(url, {
-      ...config,
-      params,
-    });
-    if (res?.data) return res.data;
-    return undefined;
-  };
+  const get = methodCreator('get');
+  const post = methodCreator('post');
+  const put = methodCreator('put');
+  const del = methodCreator('delete');
 
   return {
     requests,
