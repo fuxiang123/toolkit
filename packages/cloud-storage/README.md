@@ -5,21 +5,16 @@
 ### 安装
 
 ```
-npm i @neuton/requests @neuton/cloud-storage
+npm i @aws-sdk/client-s3 @neuton/requests @neuton/cloud-storage
 ```
 
 ### 初始化
 
 **为了区分不同项目，需要在项目入口处（如 main.js）调用 setStorageGlobalSetting 函数，配置当前项目的字符串 key。**
 
-项目 key 可以是自定义的任意字符串，但为了方便维护，需要注意两点
+项目 key 可以是自定义的任意字符串，但为了避免重复，建议用当前项目名作为 key。
 
-1. 不要和别人的重复
-2. 取名时候要体现出当前业务场景
-
-**如果添加了新的项目 key，需要写到这个文档里面（[点击查看](https://onm4v0chdx.feishu.cn/docx/GxPAdzWTkoiZj1xhlt9cHSHknrh)），避免后面其他人创建的时候重复。**
-
-cloud-storage 也会对项目 key 和文件名等信息进行拼接，生成唯一的文件路径。如果需要自定义文件路径，可以配置 formatFileKey 选项
+cloud-storage 也会对项目 key 和文件名等信息进行拼接，生成唯一的文件路径。如果需要自定义文件路径，可以配置 formatFileKey 选项。
 
 ```typescript
 import { setStorageGlobalSetting } from '@neuton/cloud-storage';
@@ -68,6 +63,54 @@ export interface UploadFileConfig {
 }
 
 const uploadFile: (file: File, uploadConfig?: UploadFileConfig) => Promise<string | undefined>;
+```
+
+### 分块上传
+
+```javascript
+// 获取上传进度
+const onProgress = (e: any) => {
+  console.log('onProgress', e);
+};
+
+// 准备分块上传
+const multiUpload = await createMultipartUpload(file, {
+  onUploadProgress: onProgress,
+  partSize: 1024 * 1024,
+});
+if (multiUpload) {
+  const { start, pause, resume } = multiUpload;
+  // 开始上传
+  start();
+  // 暂停上传
+  // pause();
+  // 恢复上传
+  // resume();
+}
+```
+
+参数说明
+
+```typescript
+interface MultipartUploadConfig {
+  storageType?: 'minio' | 'cos'; // 存储类型, 默认cos
+  fileName?: string; // 重命名文件名
+  partSize?: number; // 分块大小，默认5M
+  onUploadProgress?: (e: { total: number; progress: number; loaded: number }) => void; // 上传进度回调，同axios的onUploadProgress
+  formatFileKey?: (projectKey: string, fileName: string) => string; // 自定义文件key生成规则
+}
+
+export declare const createMultipartUpload: (
+  file: File,
+  config?: MultipartUploadConfig | undefined,
+) => Promise<
+  | {
+      start: () => Promise<void>;
+      pause: () => void;
+      resume: () => void;
+    }
+  | undefined
+>;
 ```
 
 ### 下载文件

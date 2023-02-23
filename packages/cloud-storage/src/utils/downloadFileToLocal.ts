@@ -6,7 +6,7 @@ function fakeClick(obj: any) {
 
 /** 下载文件 */
 export function downloadFileToLocal(name: string, data: string | Blob) {
-  const urlObject = window.URL || window.webkitURL || window;
+  const urlObject = window.URL || window.webkitURL;
   let exportBlob;
   if (typeof data === 'string') {
     exportBlob = new Blob([data]);

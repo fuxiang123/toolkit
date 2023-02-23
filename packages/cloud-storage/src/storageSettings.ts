@@ -2,8 +2,8 @@ import { setRequestConfig } from '@neuton/requests';
 
 export type Environment = 'prod' | 'test';
 
-/** storage全局设置 */
-export interface StorageGlobalSetting {
+/** storage用户设置 */
+export interface StorageUserSetting {
   env: Environment; // 必传，当前项目运行环境
   projectKey: string; // 必传，配置代表当前项目字符串key
   handleToken?: () => string; // 设置token，如果使用@neuton/requests作为请求库则不需要设置
@@ -11,15 +11,14 @@ export interface StorageGlobalSetting {
   formatFileKey?: (projectKey: string, filename: string) => string;
 }
 
+export type StorageGlobalSetting = Omit<StorageUserSetting, 'handleToken'>;
+
 /** storage全局设置 */
-const storageGlobalSetting: StorageGlobalSetting = {
-  env: 'test', // 当前环境
-  projectKey: '',
-};
+let storageGlobalSetting: StorageGlobalSetting;
 
 /** 设置storage全局配置 */
-export const setStorageGlobalSetting = (setting: StorageGlobalSetting) => {
-  const { projectKey, env, formatFileKey, handleToken } = setting;
+export const setStorageGlobalSetting = (setting: StorageUserSetting) => {
+  const { projectKey, env, handleToken } = setting;
   if (!env) {
     throw new Error('请为cloud-storage配置env参数');
   }
@@ -36,9 +35,7 @@ export const setStorageGlobalSetting = (setting: StorageGlobalSetting) => {
     throw new Error('cloud-storage的projectKey参数必须为字符串');
   }
 
-  storageGlobalSetting.env = env;
-  storageGlobalSetting.projectKey = projectKey;
-  storageGlobalSetting.formatFileKey = formatFileKey;
+  storageGlobalSetting = setting;
 
   if (handleToken) {
     setRequestConfig({

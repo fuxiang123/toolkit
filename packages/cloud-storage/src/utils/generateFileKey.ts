@@ -1,13 +1,15 @@
 import { v4 as uuidv4 } from 'uuid';
-import { getStorageGlobalSetting, StorageGlobalSetting } from './storageSettings';
-import { formatToday } from './utils/formatToday';
+import { getStorageGlobalSetting, StorageGlobalSetting } from '../storageSettings';
+import { formatToday } from './formatToday';
 
 // 默认的文件key生成规则
 const getDefaultFileKey = (projectKey: string, filename: string) => {
   // 日期格式化 YYYY-MM-DD,
   const dateStr = formatToday();
   const uuid = uuidv4();
-  return `${projectKey}/${dateStr}/${uuid}/${filename}`;
+  // 测试服和正式服存储不同的根文件路径
+  const rootDir = getStorageGlobalSetting().env === 'test' ? 'saas-test' : 'saas-prod';
+  return `${rootDir}/${projectKey}/${dateStr}/${uuid}/${filename}`;
 };
 
 /**

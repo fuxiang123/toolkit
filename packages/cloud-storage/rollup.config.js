@@ -34,5 +34,5 @@ module.exports = {
     },
   ],
   plugins,
-  external: ['@neuton/requests'],
+  external: ['@neuton/requests', '@aws-sdk/client-s3'],
 };

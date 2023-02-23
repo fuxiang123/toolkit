@@ -1,7 +1,7 @@
 import { AxiosProgressEvent, request, axios } from '@neuton/requests';
 import { transByte } from './utils/transByte';
 import { getDownloadUrl as getDownloadUrlApi, getUploadUrl } from './api';
-import { generateFileKey } from './generateFileKey';
+import { generateFileKey } from './utils/generateFileKey';
 import { uploadFileToStorage } from './utils/uploadFileToStorage';
 import { downloadFileToLocal } from './utils/downloadFileToLocal';
 

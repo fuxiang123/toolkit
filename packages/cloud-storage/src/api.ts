@@ -1,4 +1,4 @@
-import { get } from '@neuton/requests';
+import { get, request } from '@neuton/requests';
 import { getStorageGlobalSetting } from './storageSettings';
 
 const getBaseUrl = () => {
@@ -17,3 +17,13 @@ export const getDownloadUrl = (fileKey: string) => generatePresignedUrl(fileKey,
 
 /** 获取资源的上传链接 */
 export const getUploadUrl = (fileKey: string) => generatePresignedUrl(fileKey, 'PUT');
+
+/** 获取临时秘钥 */
+export const getTempSecret = async () => {
+  const res = (await request({
+    url: `${getBaseUrl()}/file/tmpInfo/secret`,
+    method: 'GET',
+  })) as { code?: string; msg?: string; data: any };
+  if (res?.code !== '00000') throw new Error(res?.msg);
+  return res?.data;
+};
