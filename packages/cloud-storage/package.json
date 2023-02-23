@@ -1,6 +1,6 @@
 {
   "name": "@neuton/cloud-storage",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "凝动云存储库",
   "homepage": "https://gitee.com/ningdongyiliao/neuton-toolkit/packages/cloud-storage#readme",
   "license": "ISC",
@@ -25,14 +25,14 @@
     "url": "https://gitee.com/ningdongyiliao/neuton-toolkit/issues"
   },
   "peerDependencies": {
-    "@neuton/requests": ">=0.1.5",
-    "@aws-sdk/client-s3": ">=3.276.0"
+    "@aws-sdk/client-s3": ">=3.276.0",
+    "@neuton/requests": ">=0.1.5"
   },
   "dependencies": {
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@neuton/requests": "^0.1.5",
-    "@aws-sdk/client-s3": "^3.276.0"
+    "@aws-sdk/client-s3": "^3.276.0",
+    "@neuton/requests": "^0.1.5"
   }
 }
