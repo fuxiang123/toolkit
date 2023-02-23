@@ -80,7 +80,7 @@ importers:
 
   packages/cloud-storage:
     specifiers:
-      '@neuton/requests': ^0.1.5
+      '@neuton/requests': ^0.2.0
       uuid: ^9.0.0
     dependencies:
       uuid: 9.0.0
@@ -92,7 +92,7 @@ importers:
 
   packages/cos-tools:
     specifiers:
-      '@neuton/requests': ^0.1.5
+      '@neuton/requests': ^0.2.0
       cos-js-sdk-v5: ^1.4.12
       dayjs: ^1.11.6
       uuid: ^9.0.0

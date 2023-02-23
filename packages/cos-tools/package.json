@@ -1,6 +1,6 @@
 {
   "name": "@neuton/cos-tools",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "> TODO: description",
   "private": "true",
   "homepage": "https://gitee.com/ningdongyiliao/neuton-toolkit/packages/cos-tools#readme",
@@ -31,7 +31,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@neuton/requests": "^0.1.5",
+    "@neuton/requests": "^0.2.0",
     "cos-js-sdk-v5": "^1.4.12"
   }
 }

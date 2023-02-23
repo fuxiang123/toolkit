@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/cos-tools@0.1.5...@neuton/cos-tools@0.1.6) (2023-02-23)
+
+**Note:** Version bump only for package @neuton/cos-tools
+
 ## [0.1.5](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/cos-tools@0.1.4...@neuton/cos-tools@0.1.5) (2023-01-22)
 
 **Note:** Version bump only for package @neuton/cos-tools
