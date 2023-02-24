@@ -81,7 +81,7 @@ export const initRequests = (initConfig?: RequestsConfig) => {
           handleAuthError?.(res);
         }
         console.error('接口权限信息报错', res);
-        return Promise.reject(new Error(`接口权限信息报错:${res.msg}` ?? 'Error'));
+        return Promise.reject(res);
       }
 
       if (handleResponse) {
