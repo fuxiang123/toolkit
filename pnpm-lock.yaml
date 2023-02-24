@@ -92,19 +92,6 @@ importers:
   packages/commit-check:
     specifiers: {}
 
-  packages/cos-tools:
-    specifiers:
-      '@neuton/requests': ^0.2.0
-      cos-js-sdk-v5: ^1.4.12
-      dayjs: ^1.11.6
-      uuid: ^9.0.0
-    dependencies:
-      dayjs: 1.11.6
-      uuid: 9.0.0
-    devDependencies:
-      '@neuton/requests': link:../requests
-      cos-js-sdk-v5: 1.4.12
-
   packages/hs-auth-tools:
     specifiers:
       '@babel/preset-typescript': ^7.18.6
@@ -5104,11 +5091,6 @@ packages:
       - vue
     dev: true
 
-  /@xmldom/xmldom/0.8.6:
-    resolution: {integrity: sha512-uRjjusqpoqfmRkTaNuLJ2VohVr67Q5YwDATW3VU7PfzTj6IRaihGrYI7zckGZjxQPBIp63nfvJbM+Yu5ICh0Bg==}
-    engines: {node: '>=10.0.0'}
-    dev: true
-
   /@yarnpkg/lockfile/1.1.0:
     resolution: {integrity: sha512-GpSwvyXOcOOlV70vbnzjj4fW5xW/FdUF6nQEt1ENy7m4ZCczi1+/buVUPAqmGfqznsORNFzUMjctTIp8a9tuCQ==}
     dev: true
@@ -6268,12 +6250,6 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
 
-  /cos-js-sdk-v5/1.4.12:
-    resolution: {integrity: sha512-/HbXgsCvCwOO3FgTJCy0b6iIo1M+R7+NEzr8EeI2g2Tfc43vppYKnJYAWsd5TwrLBajSdA6ZcKN4U179qUzvjg==}
-    dependencies:
-      '@xmldom/xmldom': 0.8.6
-    dev: true
-
   /cosmiconfig-typescript-loader/4.1.0_dfa6dda2a4c0fe45df9d33ba324c6b3a:
     resolution: {integrity: sha512-HbWIuR5O+XO5Oj9SZ5bzgrD4nN+rfhrm2PMb0FVx+t+XIvC45n8F0oTNnztXtspWGw0i2IzHaUWFD5LzV1JB4A==}
     engines: {node: '>=12', npm: '>=6'}
@@ -6542,6 +6518,7 @@ packages:
 
   /dayjs/1.11.6:
     resolution: {integrity: sha512-zZbY5giJAinCG+7AGaw0wIhNZ6J8AhWuSXKvuc1KAyMiRsvGQWqh4L+MomvhdAYjN+lqvVCMq1I41e3YHvXkyQ==}
+    dev: true
 
   /de-indent/1.0.2:
     resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==}
