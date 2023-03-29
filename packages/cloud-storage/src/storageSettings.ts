@@ -19,10 +19,9 @@ let storageGlobalSetting: StorageGlobalSetting;
 
 /** 设置storage全局配置 */
 export const setStorageGlobalSetting = (setting: StorageUserSetting) => {
-  const { projectKey, env, handleToken } = setting;
-  if (!env) {
-    throw new Error('请为cloud-storage配置env参数');
-  }
+  const { projectKey, env, baseUrl, handleToken } = setting;
+
+  if (!env && !baseUrl) throw new Error('请先为@neuton/cloud-storage配置env或baseUrl');
 
   if (env !== 'prod' && env !== 'test') {
     throw new Error('cloud-storage的env参数只能为prod或test');
