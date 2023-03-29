@@ -29,7 +29,11 @@ setStorageGlobalSetting({
 // 完整配置项
 setStorageGlobalSetting({
   // 场景标识。传入与当前项目关联的字符串
+  // test场景使用'https://saas-api.vansunscience.com'域名
+  // prod场景使用 'https://saas-api.neutonhealth.com'域名
   env: 'prod' | 'test', // 生产环境传入'prod', 测试环境传入'test',
+  // 手动配置云存储库使用的域名。会忽略env配置
+  baseUrl: 'https://saas-api.neutonhealth.com',
   // 配置代表当前项目字符串key
   projectKey: string;
   // 设置上传时的token，如果项目中使用@neuton/requests作为请求库，并且已配置过token则不需要重复配置

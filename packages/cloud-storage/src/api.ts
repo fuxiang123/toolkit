@@ -2,7 +2,10 @@ import { get, request } from '@neuton/requests';
 import { getStorageGlobalSetting } from './storageSettings';
 
 const getBaseUrl = () => {
-  return getStorageGlobalSetting().env === 'test' ? 'https://saas-api.vansunscience.com' : 'https://saas-api.neutonhealth.com';
+  const { env, baseUrl } = getStorageGlobalSetting();
+  if (!env && !baseUrl) throw new Error('请先为@neuton/cloud-storage配置env或baseUrl');
+  if (baseUrl) return baseUrl;
+  return env === 'test' ? 'https://saas-api.vansunscience.com' : 'https://saas-api.neutonhealth.com';
 };
 
 /**

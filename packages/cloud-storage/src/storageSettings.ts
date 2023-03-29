@@ -4,7 +4,8 @@ export type Environment = 'prod' | 'test';
 
 /** storage用户设置 */
 export interface StorageUserSetting {
-  env: Environment; // 必传，当前项目运行环境
+  env?: Environment; // 当前项目运行环境，如果手动配置了baseUrl则忽略该配置
+  baseUrl?: string; // 手动配置云存储库使用的域名。会忽略env配置
   projectKey: string; // 必传，配置代表当前项目字符串key
   handleToken?: () => string; // 设置token，如果使用@neuton/requests作为请求库则不需要设置
   // 自定义文件key生成规则
