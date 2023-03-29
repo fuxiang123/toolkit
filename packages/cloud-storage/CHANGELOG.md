@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/cloud-storage@0.3.0...@neuton/cloud-storage@0.4.0) (2023-03-29)
+
+### Features
+
+- **cloud-storage:** 添加自定义域名配置 ([590c6fd](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/590c6fd539cad0b01748dc76f47ca35c5396eb7d))
+
 # [0.3.0](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/cloud-storage@0.2.5...@neuton/cloud-storage@0.3.0) (2023-02-23)
 
 ### Features
