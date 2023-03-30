@@ -23,8 +23,27 @@ export function hsTrack(url: string, params: object = {}) {
   const openid = getHsUserId();
   const trackPram = { ...params, openid };
   if (openid) {
-    customTrack(url, openid, trackPram);
-    return axios.post(`${baseURL}${url}/`, { ...trackPram, openid }) as Promise<{ data: { data: { id: string } } }>;
+    axios
+      .post(`${baseURL}${url}/`, { ...trackPram, openid })
+      .then(value => {
+        let hsStatue = value;
+        if (value.data.code === 200) {
+          hsStatue = value.data;
+        } else {
+          hsStatue = value.data.message;
+        }
+        trackPram['hsStatus'] = hsStatue;
+        customTrack(url, openid, trackPram);
+      })
+      .catch(error => {
+        let err = error;
+        if (err.response && err.response.data) {
+          err = err.response.data.message || err.response.data;
+        } else if (err.message) {
+          err = err.message;
+        }
+        trackPram['hsStatus'] = err;
+        customTrack(url, openid, trackPram);
+      });
   }
-  return undefined;
 }
