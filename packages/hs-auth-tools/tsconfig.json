@@ -2,8 +2,8 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "paths": {
-      "axios": ["node_modules/axios"],
+      "axios": ["node_modules/axios"]
     }
   },
-  "include": ["index.ts", "src/**/*.ts"],
+  "include": ["index.ts", "src/**/*.ts", "src/**/*.vue"]
 }
