@@ -41,7 +41,9 @@ export async function hsTrack(url: string, params: object = {}) {
         hsStatue = value.data.message;
       }
       trackPram['hsStatus'] = hsStatue;
-      await customTrack(url, openid, trackPram);
+      customTrack(url, openid, trackPram);
     }
+    return value as { data: { data: { id: string } } };
   }
+  return undefined;
 }
