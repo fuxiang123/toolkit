@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.7](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/hs-auth-tools@2.3.6...@neuton/hs-auth-tools@2.3.7) (2023-03-31)
+
+### Bug Fixes
+
+- **hs:** 修复 ts 类型报错 ([544a577](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/544a57745afc39b59c079187968d97539212de1d))
+
 ## [2.3.6](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/hs-auth-tools@2.3.5...@neuton/hs-auth-tools@2.3.6) (2023-03-31)
 
 ### Bug Fixes
