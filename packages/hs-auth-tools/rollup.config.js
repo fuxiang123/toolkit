@@ -10,6 +10,7 @@ import vue from 'rollup-plugin-vue';
 import image from '@rollup/plugin-image';
 import babel from '@rollup/plugin-babel';
 import postcss from 'rollup-plugin-postcss';
+import del from 'rollup-plugin-delete';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -31,6 +32,7 @@ const plugins = [
     extensions,
     presets: ['@babel/preset-typescript'],
   }), // babelHelpers是bable的最佳实践方案 extensions编译的扩展文件
+  del({ targets: 'dist/*' }),
 ];
 
 // 如果不是开发环境，开启压缩
