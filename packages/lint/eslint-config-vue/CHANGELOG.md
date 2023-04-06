@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.10](https://github.com/fuxiang123/test-learn/compare/@neuton/eslint-config-vue@1.1.9...@neuton/eslint-config-vue@1.1.10) (2023-04-06)
+
+**Note:** Version bump only for package @neuton/eslint-config-vue
+
 ## [1.1.9](https://github.com/fuxiang123/test-learn/compare/@neuton/eslint-config-vue@1.1.8...@neuton/eslint-config-vue@1.1.9) (2022-10-22)
 
 ### Bug Fixes

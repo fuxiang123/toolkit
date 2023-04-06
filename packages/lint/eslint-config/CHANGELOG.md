@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/fuxiang123/test-learn/compare/@neuton/eslint-config@1.1.3...@neuton/eslint-config@1.1.4) (2023-04-06)
+
+### Bug Fixes
+
+- **video-plugin:** 修复发布配置 ([ac6dde7](https://github.com/fuxiang123/test-learn/commit/ac6dde7ebd831f14e61c7a2c019c0ac24f5fe17e))
+
 ## [1.1.3](https://github.com/fuxiang123/test-learn/compare/@neuton/eslint-config@1.1.2...@neuton/eslint-config@1.1.3) (2022-10-03)
 
 ### Bug Fixes

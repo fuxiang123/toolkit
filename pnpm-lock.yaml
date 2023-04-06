@@ -163,7 +163,7 @@ importers:
 
   packages/lint/eslint-config-vue:
     specifiers:
-      '@neuton/eslint-config': ^1.1.3
+      '@neuton/eslint-config': ^1.1.4
       '@vue/eslint-config-typescript': ^9.1.0
       eslint-plugin-vue: ^9.5.1
       vue-eslint-parser: ^9.1.0
