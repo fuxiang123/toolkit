@@ -45,7 +45,6 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     'import/prefer-default-export': 'off',
     'no-plusplus': 'off',
-    semi: 'error',
     'no-underscore-dangle': 'off',
     radix: 'off',
     'one-var': 'off',

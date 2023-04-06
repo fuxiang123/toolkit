@@ -891,7 +891,7 @@ const playByProgress = () => {
       videoEl.play();
     }
     state.isPlaying = prePlayIng;
-    
+
     videoEl.removeEventListener('canplay', videoCanplay);
   };
   state.videoLoading = true;
