@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import path from 'path';
 import dts from 'vite-plugin-dts';
+import libCss from 'vite-plugin-libcss';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,6 +18,7 @@ export default defineConfig({
     dts({
       entryRoot: path.resolve(__dirname, 'src/components'),
     }),
+    libCss(),
   ],
   build: {
     lib: {

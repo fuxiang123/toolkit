@@ -1,1 +1,3 @@
-export { default as FpsPlayer } from './fps-player/FpsPlayer.vue';
+import FpsPlayer from './fps-player/FpsPlayer.vue';
+
+export default FpsPlayer;
