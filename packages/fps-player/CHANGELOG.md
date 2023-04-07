@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.5](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/fps-player@0.0.4...@neuton/fps-player@0.0.5) (2023-04-07)
+
+### Bug Fixes
+
+- **fps-player:** 调整 css 打包 ([e748abe](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/e748abe99818bfe7668b932e861d182870079a72))
+
 ## [0.0.4](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/fps-player@0.1.0...@neuton/fps-player@0.0.4) (2023-04-07)
 
 ### Bug Fixes
