@@ -9,6 +9,7 @@ export const hsTestConfig = {
   hcpUrl: 'https://vapitst.msdp.cn/',
   hcpRedirectUrl: 'https://msd-tumor-h5.aihuoshi.net/',
   hsStatisticsUrl: 'https://msd-user-management.aihuoshi.net/',
+  ndTrackUrl: 'https://api.vansunscience.com:8443/',
 };
 
 export const hsProductConfig = {
@@ -17,4 +18,5 @@ export const hsProductConfig = {
   hcpUrl: ' https://vapi.msdp.cn/',
   hcpRedirectUrl: 'https://msd-tumor-h5.hsmap.com',
   hsStatisticsUrl: 'https://msd-user-management.aimed.cn/',
+  ndTrackUrl: 'https://msd-api.vansunscience.com/',
 };

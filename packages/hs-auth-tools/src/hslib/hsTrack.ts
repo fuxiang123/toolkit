@@ -10,7 +10,8 @@ function customTrack(url: string, openid: string, params: object) {
     openid,
     params: Object.keys(params).length > 0 ? JSON.stringify(params) : '',
   };
-  axios.post('frontend/addAccessLog', data);
+  const nsTrackUrl = getHsConfig().ndTrackUrl;
+  axios.post(`${nsTrackUrl}frontend/addAccessLog`, data);
 }
 
 /**
