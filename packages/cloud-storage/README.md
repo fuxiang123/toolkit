@@ -21,7 +21,7 @@ import { setStorageGlobalSetting } from '@neuton/cloud-storage';
 
 // 配置示例
 setStorageGlobalSetting({
-  env: process.env.VUE_APP_Enviroment === 'prod' ? 'prod' : 'test',
+  env: process.env.VUE_APP_Environment === 'prod' ? 'prod' : 'test',
   projectKey: 'saas-project',
   handleToken: () => localStorage.getItem('Authorization') ?? '',
 });
