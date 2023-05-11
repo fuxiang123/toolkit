@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/cloud-storage@0.4.1...@neuton/cloud-storage@0.4.2) (2023-05-11)
+
+**Note:** Version bump only for package @neuton/cloud-storage
+
 ## [0.4.1](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/cloud-storage@0.4.0...@neuton/cloud-storage@0.4.1) (2023-03-29)
 
 ### Bug Fixes

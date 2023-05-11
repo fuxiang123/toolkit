@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/hs-auth-tools@2.3.9...@neuton/hs-auth-tools@2.5.0) (2023-05-11)
+
+### Features
+
+- **添加凝动埋点域名:** 添加埋点域名 ([e96beff](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/e96beffa43fb65c01d178b0a95bc96d8616d4437))
+- **hs:** 修改版本号 ([7b1436e](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/7b1436e6ab817099645cdc6df141a5c5606554f7))
+
 ## [2.3.9](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/hs-auth-tools@2.3.8...@neuton/hs-auth-tools@2.3.9) (2023-03-31)
 
 ### Bug Fixes
