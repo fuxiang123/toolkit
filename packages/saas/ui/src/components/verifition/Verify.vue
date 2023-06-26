@@ -80,7 +80,7 @@ export default {
       type: Object,
     },
   },
-  setup(props) {
+  setup(props: any) {
     const { captchaType, mode } = toRefs(props);
     const clickShow = ref(false);
     const verifyType = ref<string>();
