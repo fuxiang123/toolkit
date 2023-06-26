@@ -28,6 +28,7 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.1.1",
     "@rollup/plugin-typescript": "^8.5.0",
+    "@types/crypto-js": "^4.1.1",
     "@types/jest": "^29.2.3",
     "commander": "^9.4.0",
     "commitizen": "^4.2.4",

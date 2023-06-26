@@ -47,6 +47,9 @@ importers:
       '@rollup/plugin-typescript':
         specifier: ^8.5.0
         version: 8.5.0(rollup@2.79.1)(tslib@2.4.0)(typescript@4.8.4)
+      '@types/crypto-js':
+        specifier: ^4.1.1
+        version: 4.1.1
       '@types/jest':
         specifier: ^29.2.3
         version: 29.2.3
@@ -4791,6 +4794,10 @@ packages:
     resolution: {integrity: sha512-FcFaxOr2V5KZCviw1TnutEMVUVsGt4D2hP1TAfXZAMKuHYW3xQhe3jTxNPWutgCJ3/X1c5yX8ZoGVEItxKbwBg==}
     dependencies:
       '@babel/types': 7.20.2
+    dev: true
+
+  /@types/crypto-js@4.1.1:
+    resolution: {integrity: sha512-BG7fQKZ689HIoc5h+6D2Dgq1fABRa0RbBWKBd9SP/MVRVXROflpm5fhwyATX5duFmbStzyzyycPB8qUYKDH3NA==}
     dev: true
 
   /@types/estree@0.0.39:
