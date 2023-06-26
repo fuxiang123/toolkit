@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/saas-ui@0.2.0...@neuton/saas-ui@0.2.1) (2023-06-26)
+
+### Bug Fixes
+
+- **saas-ui:** 修改包引入位置 ([81b7b1c](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/81b7b1c94b61e4dbd7cfe8f3f9d1ffd7e2fbdf4a))
+
 # [0.2.0](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/saas-ui@0.1.4...@neuton/saas-ui@0.2.0) (2023-06-26)
 
 ### Features
