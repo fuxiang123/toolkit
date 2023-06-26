@@ -24,13 +24,6 @@ npm i @neuton/saas-ui
 pnpm i @neuton/saas-ui
 ```
 
-推荐使用[ni](https://github.com/antfu/ni#ni)安装依赖,可无视项目使用的包管理器。
-
-```
-# 使用ni
-ni @neuton/saas-ui
-```
-
 ## 文档地址
 
 ### 组件
