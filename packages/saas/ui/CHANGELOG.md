@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/saas-ui@0.1.4...@neuton/saas-ui@0.2.0) (2023-06-26)
+
+### Features
+
+- **添加验证码组件:** 添加验证码组件 ([fe1e701](https://gitee.com/ningdongyiliao/neuton-toolkit/commits/fe1e70108dea593ee32dfd63907400168361dfbc))
+
 ## [0.1.4](https://gitee.com/ningdongyiliao/neuton-toolkit/compare/@neuton/saas-ui@0.1.3...@neuton/saas-ui@0.1.4) (2022-11-17)
 
 ### Bug Fixes
