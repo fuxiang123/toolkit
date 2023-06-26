@@ -219,7 +219,7 @@ export default {
           const type = localStorage.getItem('type');
           const userId = localStorage.getItem('userId');
 
-          post('captcha/check', { ...data, uniqueCode, action, type, userId })
+          post('/captcha/check', { ...data, uniqueCode, action, type, userId })
             .then(d => {
               barAreaColor.value = '#4cae4c';
               barAreaBorderColor.value = '#5cb85c';

@@ -7,6 +7,7 @@ import { ref } from 'vue';
 const btnText = ref('Click me')
 
 const asyncFn = async () => {
+  showVerify();
   await new Promise((resolve) => setTimeout(resolve, 2000))
   btnText.value = 'Hello World'
 }

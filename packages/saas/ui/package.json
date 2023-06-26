@@ -27,9 +27,9 @@
     "vue": ">=3.0.0"
   },
   "dependencies": {
+    "@neuton/requests": "^0.1.5",
     "vitepress-demo-editor": "^3.0.8",
-    "vue": "^3.2.41",
-    "@neuton/requests": "workspace:*"
+    "vue": "^3.2.41"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.2.0",

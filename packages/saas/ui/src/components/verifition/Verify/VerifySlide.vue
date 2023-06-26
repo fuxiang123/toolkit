@@ -278,7 +278,7 @@ export default {
         const action = localStorage.getItem('action');
         const getType = localStorage.getItem('type');
         const userId = localStorage.getItem('userId');
-        post('captcha/check', { ...data, uniqueCode, action, getType, userId })
+        post('/captcha/check', { ...data, uniqueCode, action, getType, userId })
           .then(res => {
             moveBlockBackgroundColor.value = '#5cb85c';
             leftBarBorderColor.value = '#5cb85c';
