@@ -2,6 +2,14 @@
 
 > 图形验证码组件
 
+## 添加依赖
+
+```
+npm install @neuton/requests
+```
+
+````
+
 ## 使用方式
 
 ```vue
@@ -24,4 +32,4 @@ const capctchaCheckSuccess = async (params: any) => {
   console.log(params);
 };
 </script>
-```
+````
