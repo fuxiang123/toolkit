@@ -78,7 +78,7 @@ export const initRequests = (initConfig?: RequestsConfig) => {
       const res = response.data;
       if (successAuthCode?.length && !successAuthCode.includes(res.code)) {
         if (handleAuthError) {
-          handleAuthError?.(res);
+          handleAuthError?.(response);
         }
         console.error('接口权限信息报错', res);
         return Promise.reject(res);
