@@ -30,17 +30,17 @@ setRequestConfig({
 完整配置项
 
 ```typescript
-interface RequestsConfig {
-  // 基础url前缀
+export interface RequestsConfig {
+  /** 基础url前缀 */
   baseURL?: string;
-  // 后端接口表示请求成功时候的权限码，如果接口没有返回对应权限码则表示请求出错
+  /** 后端接口表示请求成功时候的权限码 */
   successAuthCode?: string[];
-  // 传递一个获取token的函数
+  /** 传递一个获取token的函数 */
   handleToken?: () => string;
-  // http状态码非200情况处理
-  handleNetworkError?: (httpStatus: number | undefined) => void;
-  // 后端接口状态码（response.code）与successAuthCode不同时候的情况处理
-  handleAuthError?: (data: AxiosResponse['data']) => void;
+  /** http状态码非200情况处理 */
+  handleNetworkError?: (error: AxiosError) => void;
+  /** 后端接口状态码（response.code）与successAuthCode不同时候的情况处理 */
+  handleAuthError?: (response: AxiosResponse) => void;
   // 通用request处理
   handleRequest?: (config: AxiosRequestConfig) => AxiosRequestConfig;
   // 通用response处理

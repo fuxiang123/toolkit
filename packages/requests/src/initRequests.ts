@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable @typescript-eslint/no-empty-function */
-import axios, { Axios, AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { Axios, AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 /** request基础配置 */
 export interface RequestsConfig {
@@ -11,9 +11,9 @@ export interface RequestsConfig {
   /** 传递一个获取token的函数 */
   handleToken?: () => string;
   /** http状态码非200情况处理 */
-  handleNetworkError?: (httpStatus: number | undefined) => void;
+  handleNetworkError?: (error: AxiosError) => void;
   /** 后端接口状态码（response.code）与successAuthCode不同时候的情况处理 */
-  handleAuthError?: (data: AxiosResponse['data']) => void;
+  handleAuthError?: (response: AxiosResponse) => void;
   // 通用request处理
   handleRequest?: (config: AxiosRequestConfig) => AxiosRequestConfig;
   // 通用response处理
@@ -91,8 +91,7 @@ export const initRequests = (initConfig?: RequestsConfig) => {
       return res;
     },
     error => {
-      requests.requestConfig.handleNetworkError?.(error.response?.status);
-      console.error(`接口返回报错${error}`);
+      requests.requestConfig.handleNetworkError?.(error);
       return Promise.reject(error);
     },
   );
