@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/fuxiang123/toolkit/compare/@fuxiang1234/commit-check@1.4.0...@fuxiang1234/commit-check@1.3.1) (2024-11-03)
+
+### Reverts
+
+- Revert "chore(release): publish" ([80f1340](https://github.com/fuxiang123/toolkit/commit/80f1340f1bdd435270c7e7359c06210798a8c772))
+
 # [1.3.0](https://github.com/fuxiang123/toolkit/compare/@fuxiang1234/commit-check@1.2.0...@fuxiang1234/commit-check@1.3.0) (2024-11-03)
 
 ### Features

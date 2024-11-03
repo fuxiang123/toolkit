@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/fuxiang123/toolkit/compare/@fuxiang1234/requests@1.4.0...@fuxiang1234/requests@1.3.1) (2024-11-03)
+
+### Bug Fixes
+
+- **tsconfg:** 修改包名 ([bf21f94](https://github.com/fuxiang123/toolkit/commit/bf21f94a629433ceab9f793b374597fe48b93d22))
+
+### Reverts
+
+- Revert "chore(release): publish" ([80f1340](https://github.com/fuxiang123/toolkit/commit/80f1340f1bdd435270c7e7359c06210798a8c772))
+
 # [1.3.0](https://github.com/fuxiang123/toolkit/compare/@fuxiang1234/requests@1.2.0...@fuxiang1234/requests@1.3.0) (2024-11-03)
 
 ### Features

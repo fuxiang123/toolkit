@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/fuxiang123/toolkit/compare/@fuxiang1234/tsconfig@1.3.0...@fuxiang1234/tsconfig@1.3.2) (2024-11-03)
+
+### Bug Fixes
+
+- **all:** 修改包名 ([a6bd582](https://github.com/fuxiang123/toolkit/commit/a6bd582a1d6f6b383b44f4fdfafcb0ff7b5e1125))
+- **tsconfg:** 修改包名 ([bf21f94](https://github.com/fuxiang123/toolkit/commit/bf21f94a629433ceab9f793b374597fe48b93d22))
+- **tsconfg:** 修改包名 ([4f0036d](https://github.com/fuxiang123/toolkit/commit/4f0036d6f7c45f56dfd52d06e223d522978336b2))
+
+### Reverts
+
+- Revert "chore(release): publish" ([80f1340](https://github.com/fuxiang123/toolkit/commit/80f1340f1bdd435270c7e7359c06210798a8c772))
+
 # 1.3.0 (2024-11-03)
 
 ### Bug Fixes
