@@ -1,6 +1,6 @@
 {
   "name": "@fuxiang1234/eslint-config",
-  "version": "1.4.0",
+  "version": "1.3.0",
   "description": "eslint,prettier配置",
   "license": "ISC",
   "publishConfig": {
