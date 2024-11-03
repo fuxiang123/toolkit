@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/fuxiang123/toolkit/compare/@fuxiang/eslint-config@1.2.0...@fuxiang/eslint-config@1.3.0) (2024-11-03)
+
+### Features
+
+- **all:** 添加类型支持 ([3b240f1](https://github.com/fuxiang123/toolkit/commit/3b240f1f3407f35175fd19498eef607c9986db4e))
+
 # 1.2.0 (2024-11-03)
 
 ### Bug Fixes
