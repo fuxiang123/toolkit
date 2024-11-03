@@ -29,7 +29,7 @@ importers:
       '@fuxiang1234/eslint-config':
         specifier: workspace:*
         version: link:packages/lint/eslint-config
-      '@fuxiang12341234/tsconfig':
+      '@fuxiang1234/tsconfig':
         specifier: workspace:*
         version: link:packages/ts/tsconfig
       '@rollup/plugin-babel':

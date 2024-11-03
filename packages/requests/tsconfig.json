@@ -1,5 +1,5 @@
 {
-  "extends": "@fuxiang12341234/tsconfig",
+  "extends": "@fuxiang1234/tsconfig",
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "dist",
