@@ -1,9 +1,0 @@
-{
-  "extends": "@neuton/tsconfig",
-  "compilerOptions": {
-    "jsx": "preserve",
-    "declaration": true,
-    "declarationDir": "dist",
-    "noImplicitAny": false,
-  }
-}

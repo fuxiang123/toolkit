@@ -1,16 +1,16 @@
-# `@neuton/requests`
+# `@fuxiang/requests`
 
-> 凝动前端基础请求库, 基于 axios 封装。
+> 前端基础请求库, 基于 axios 封装。
 
 ## 安装
 
 ```
 # npm
-npm install @neuton/requests
+npm install @fuxiang/requests
 # yarn
-yarn add @neuton/requests
+yarn add @fuxiang/requests
 # pnpm
-pnpm install @neuton/requests
+pnpm install @fuxiang/requests
 
 ```
 
@@ -19,7 +19,7 @@ pnpm install @neuton/requests
 在项目入口处（如 main.js）调用 setRequestConfig， 进行全局基础配置
 
 ```javascript
-import { setRequestConfig } from '@neuton/requests';
+import { setRequestConfig } from '@fuxiang/requests';
 setRequestConfig({
   baseURL: 'xxx', // 配置基础请求url前缀
   handleToken: () => 'token', // 获取token的回调函数，需要一个返回字符串的函数
@@ -53,7 +53,7 @@ export interface RequestsConfig {
 绝大多数情况下，直接引入接口对应的 http 函数即可。
 
 ```javascript
-import { get, post, put, del } from '@neuton/requests';
+import { get, post, put, del } from '@fuxiang/requests';
 
 const getApi = params => get('接口路径', params);
 const postApi = params => post('接口路径', params);
@@ -73,7 +73,7 @@ const { data, error, loading } = useRequest(() => getUsername({ desc: 'good' }))
 如果遇到非标准化的接口(如接口返回的根路径中不包含 data 字段)，可以使用 returnReponse 参数，加了该参数后会返回完整的 response。
 
 ```javascript
-import { get, post, put, del } from '@neuton/requests';
+import { get, post, put, del } from '@fuxiang/requests';
 
 const getApi = params => get('接口路径', params, { returnResponse: true });
 ```
@@ -81,7 +81,7 @@ const getApi = params => get('接口路径', params, { returnResponse: true });
 也可以使用 request 函数进行处理。
 
 ```javascript
-import { request } from '@neuton/requests';
+import { request } from '@fuxiang/requests';
 
 const getApi = params =>
   request({
@@ -100,7 +100,7 @@ const getApi = params =>
 不同 requests 实例的配置彼此独立，不会共享。
 
 ```javascript
-import { create } from '@neuton/requests';
+import { create } from '@fuxiang/requests';
 
 const { request, get, post, put, del } = create({
   // 传入配置
@@ -110,10 +110,10 @@ const { request, get, post, put, del } = create({
 
 ## 获取 axios 实例
 
-在某些复杂场景，如果@neuton/request 的默认配置不能满足您的要求，您可以通过`requests.instance`获取 axios 示例，来自定义如拦截器等功能。
+在某些复杂场景，如果@fuxiang/request 的默认配置不能满足您的要求，您可以通过`requests.instance`获取 axios 示例，来自定义如拦截器等功能。
 
 ```javascript
-import { requests } from '@neuton/requests';
+import { requests } from '@fuxiang/requests';
 
 requests.instance.interceptors.request.use(config => {
   console.log('config', config);
@@ -126,5 +126,5 @@ requests.instance.interceptors.request.use(config => {
 如果确实存在本工具库无法覆盖的场景（如获取 CancelToken 等），你也可以通过以下方式获取原本的 axios。
 
 ```javascript
-import { axios } from '@neuton/requests';
+import { axios } from '@fuxiang/requests';
 ```

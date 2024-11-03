@@ -1,9 +1,0 @@
-{
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "paths": {
-      "axios": ["node_modules/axios"]
-    }
-  },
-  "include": ["index.ts", "src/**/*.ts", "src/**/*.vue", "index.d.ts"]
-}

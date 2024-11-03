@@ -23,7 +23,7 @@ module.exports = function () {
   // 项目根路径
   const target = path.resolve(process.cwd(), 'packages');
   return {
-    // 项目基本名称。例如：@neuton/my-project，my-project就是基本名称
+    // 项目基本名称。例如：@fuxiang/my-project，my-project就是基本名称
     projectBaseName,
     // 项目名
     projectName: opts.projectName ?? toCamelCase(projectBaseName),

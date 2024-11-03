@@ -1,4 +1,4 @@
-# `@neuton/tsconfig`
+# `@fuxiang/tsconfig`
 
 > ts 通用配置文件
 
@@ -6,7 +6,7 @@
 
 ```
 {
-  "extends": "@neuton/tsconfig",
+  "extends": "@fuxiang/tsconfig",
   "compilerOptions": {
     // ...自定义规则
   }

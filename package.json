@@ -4,6 +4,14 @@
   "workspaces": [
     "packages/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fuxiang123/toolkit"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "lerna run build --stream --sort",
     "create:pkg": "node scripts/create",
@@ -21,8 +29,8 @@
     "@commitlint/config-angular": "^17.0.3",
     "@commitlint/config-conventional": "^17.1.0",
     "@commitlint/cz-commitlint": "^17.0.3",
-    "@neuton/eslint-config": "workspace:*",
-    "@neuton/tsconfig": "workspace:*",
+    "@fuxiang/eslint-config": "workspace:*",
+    "@fuxiang/tsconfig": "workspace:*",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^23.0.0",
     "@rollup/plugin-json": "^4.1.0",
@@ -45,7 +53,7 @@
     "lint-staged": "^12.4.1",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
-    "rollup": "^2.61.1",
+    "rollup": "^2.79.2",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-postcss": "^3.1.4",
     "rollup-plugin-preserve-shebang": "^1.0.1",

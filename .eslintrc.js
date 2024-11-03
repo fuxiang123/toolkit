@@ -1,3 +1,3 @@
 module.exports = {
-  extends: '@neuton/eslint-config',
+  extends: '@fuxiang/eslint-config',
 };

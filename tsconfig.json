@@ -1,5 +1,5 @@
 {
-  "extends": "@neuton/tsconfig",
+  "extends": "@fuxiang/tsconfig",
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "dist",

@@ -1,4 +1,4 @@
-# `@neuton/commit-check`
+# `@fuxiang/commit-check`
 
 > 一键添加 git commit 校验工具。强制 commit 信息遵循 angular 规范。
 
@@ -7,7 +7,7 @@
 ### 1.在项目根目录下安装依赖
 
 ```
-npm install @neuton/commit-check -D
+npm install @fuxiang/commit-check -D
 ```
 
 ### 2. 运行 commit-check 指令

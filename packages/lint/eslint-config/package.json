@@ -1,9 +1,11 @@
 {
-  "name": "@neuton/eslint-config",
+  "name": "@fuxiang/eslint-config",
   "version": "1.1.4",
   "description": "eslint,prettier配置",
-  "homepage": "https://github.com/fuxiang123/test-learn#readme",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
@@ -20,16 +22,6 @@
   "keywords": [
     "eslint",
     "eslintconfig",
-    "neuton"
-  ],
-  "publishConfig": {
-    "registry": "http://82.157.120.5:4873/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fuxiang123/test-learn.git"
-  },
-  "bugs": {
-    "url": "https://github.com/fuxiang123/test-learn/issues"
-  }
+    "fuxiang"
+  ]
 }

@@ -1,29 +1,21 @@
 {
-  "name": "@neuton/eslint-config-vue",
+  "name": "@fuxiang/eslint-config-vue",
   "version": "1.1.10",
   "description": "eslint,prettier,vue配置",
-  "homepage": "https://github.com/fuxiang123/test-learn#readme",
   "license": "ISC",
   "dependencies": {
-    "@neuton/eslint-config": "^1.1.4",
+    "@fuxiang/eslint-config": "^1.1.4",
     "@vue/eslint-config-typescript": "^9.1.0",
     "eslint-plugin-vue": "^9.5.1",
     "vue-eslint-parser": "^9.1.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "eslint",
     "eslintconfig",
-    "neuton",
+    "fuxiang",
     "vue"
-  ],
-  "publishConfig": {
-    "registry": "http://82.157.120.5:4873/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fuxiang123/test-learn.git"
-  },
-  "bugs": {
-    "url": "https://github.com/fuxiang123/test-learn/issues"
-  }
+  ]
 }

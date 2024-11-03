@@ -1,4 +1,4 @@
-# `eslint-config-neuton`
+# `eslint-config-fuxiang`
 
 > TODO: 作用描述
 

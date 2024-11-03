@@ -1,9 +1,0 @@
-{
-  "extends": "@neuton/tsconfig",
-  "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "dist",
-    "noImplicitAny": false,
-  },
-  "exclude": ["./dist/**/*"]
-}

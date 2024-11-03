@@ -1,6 +1,6 @@
-# `neuton-toolkit`
+# `fuxiang-toolkit`
 
-> 凝动 monorepo 工具库
+> monorepo 工具库
 
 ## 预先准备
 
