@@ -22,7 +22,7 @@ if (!projectBaseName.match(/^[a-zA-Z]/)) {
 const templatePoints = {
   dirName, // 项目所在文件夹名
   dirPath, // 项目相对路径
-  projectBaseName, // 项目基本名称。例如：@fuxiang/my-project，my-project就是基本名称
+  projectBaseName, // 项目基本名称。例如：@fuxiang1234/my-project，my-project就是基本名称
   projectName, // 项目名
   gitrepo: 'https://gitee.com/fuxiang/fuxiang-toolkit',
   registry: 'http://82.157.120.5:4873/',

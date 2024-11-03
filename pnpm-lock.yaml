@@ -26,10 +26,10 @@ importers:
       '@commitlint/cz-commitlint':
         specifier: ^17.0.3
         version: 17.0.3(commitizen@4.2.4)(inquirer@8.0.0)
-      '@fuxiang/eslint-config':
+      '@fuxiang1234/eslint-config':
         specifier: workspace:*
         version: link:packages/lint/eslint-config
-      '@fuxiang1234/tsconfig':
+      '@fuxiang12341234/tsconfig':
         specifier: workspace:*
         version: link:packages/ts/tsconfig
       '@rollup/plugin-babel':
@@ -160,7 +160,7 @@ importers:
 
   packages/lint/eslint-config-vue:
     dependencies:
-      '@fuxiang/eslint-config':
+      '@fuxiang1234/eslint-config':
         specifier: ^1.3.0
         version: link:../eslint-config
       '@vue/eslint-config-typescript':

@@ -1,4 +1,4 @@
-# `@fuxiang1234/tsconfig`
+# `@fuxiang12341234/tsconfig`
 
 > ts 通用配置文件
 
@@ -6,7 +6,7 @@
 
 ```
 {
-  "extends": "@fuxiang1234/tsconfig",
+  "extends": "@fuxiang12341234/tsconfig",
   "compilerOptions": {
     // ...自定义规则
   }
