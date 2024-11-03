@@ -1,5 +1,5 @@
 {
-  "name": "@fuxiang/tsconfig",
+  "name": "@fuxiang1234/tsconfig",
   "version": "1.2.0",
   "description": "> TODO: description",
   "license": "ISC",
@@ -11,5 +11,6 @@
   },
   "scripts": {
     "test": "node ./__tests__/test.test.js"
-  }
+  },
+  "gitHead": "d07ecd821ed59b1cc0b9f077cd8c57ccd61ba778"
 }

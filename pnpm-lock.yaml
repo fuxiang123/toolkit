@@ -29,7 +29,7 @@ importers:
       '@fuxiang/eslint-config':
         specifier: workspace:*
         version: link:packages/lint/eslint-config
-      '@fuxiang/tsconfig':
+      '@fuxiang1234/tsconfig':
         specifier: workspace:*
         version: link:packages/ts/tsconfig
       '@rollup/plugin-babel':
@@ -53,6 +53,9 @@ importers:
       '@types/jest':
         specifier: ^29.2.3
         version: 29.2.3
+      '@types/node':
+        specifier: ^22.8.6
+        version: 22.8.6
       commander:
         specifier: ^9.4.0
         version: 9.4.0
