@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/fuxiang123/toolkit/compare/@fuxiang1234/commit-check@1.3.1...@fuxiang1234/commit-check@1.3.2) (2024-12-24)
+
+**Note:** Version bump only for package @fuxiang1234/commit-check
+
 ## [1.3.1](https://github.com/fuxiang123/toolkit/compare/@fuxiang1234/commit-check@1.4.0...@fuxiang1234/commit-check@1.3.1) (2024-11-03)
 
 ### Reverts
