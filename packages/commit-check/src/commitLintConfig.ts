@@ -2,8 +2,22 @@ export const commitLintConfig = `module.exports = {
   extends: ['@commitlint/config-angular'],
   rules: {
     'type-empty': [2, 'never'],
-    'type-enum': [2, 'always', ['tool', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test', 'chore']],
-    'scope-empty': [2, 'never'],
+    'type-enum': [
+      2,
+      'always',
+      [
+        'tool',
+        'docs',
+        'feat',
+        'fix',
+        'perf',
+        'refactor',
+        'revert',
+        'style',
+        'test',
+        'chore',
+      ],
+    ],
     'subject-empty': [2, 'never'],
   },
   prompt: {
@@ -74,7 +88,7 @@ export const commitLintConfig = `module.exports = {
         },
       },
       scope: {
-        description: '请输入修改的范围（必填）',
+        description: '请输入修改的范围（可选）',
       },
       subject: {
         description: '请简要描述提交（必填）',
@@ -86,7 +100,8 @@ export const commitLintConfig = `module.exports = {
         description: '是否有不兼容旧版本的用法?',
       },
       breakingBody: {
-        description: '一个破坏性的变更提交需要一个主体。 请输入提交本身的更长的描述',
+        description:
+          '一个破坏性的变更提交需要一个主体。 请输入提交本身的更长的描述',
       },
       breaking: {
         description: 'Describe the breaking changes',
@@ -95,7 +110,8 @@ export const commitLintConfig = `module.exports = {
         description: '是否有未解决的问题?',
       },
       issuesBody: {
-        description: 'If issues are closed, the commit requires a body. Please enter a longer description of the commit itself',
+        description:
+          'If issues are closed, the commit requires a body. Please enter a longer description of the commit itself',
       },
       issues: {
         description: '请输入问题说明',

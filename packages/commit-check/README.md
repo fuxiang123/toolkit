@@ -13,7 +13,7 @@ npm install @fuxiang1234/commit-check -D
 ### 2. 运行 commit-check 指令
 
 ```
-npm run commit-check
+npx commit-check
 ```
 
 ### 3. 运行完毕后，执行 install 指令
